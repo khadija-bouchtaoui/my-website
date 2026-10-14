@@ -148,6 +148,32 @@ section{padding:95px 0}
 .about-text p{color:var(--muted);margin-bottom:15px}
 .signature{font-family:"Playfair Display",serif;color:var(--blue-dark);font-size:24px;margin-top:20px}
 
+
+.race-summary-wrap{margin-top:55px;max-width:900px}
+.race-summary-toggle{width:100%;display:flex;align-items:center;gap:15px;text-align:left;padding:20px 22px;border:1px solid #dcecf6;border-radius:24px;background:rgba(255,255,255,.94);color:var(--blue-deep);box-shadow:0 12px 32px rgba(38,102,145,.07);cursor:pointer;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;-webkit-tap-highlight-color:transparent}
+.race-summary-toggle:hover{transform:translateY(-2px);box-shadow:0 17px 36px rgba(38,102,145,.11);border-color:#b8def4}
+.race-summary-toggle:active{transform:scale(.99)}
+.race-summary-icon{width:50px;height:50px;display:grid;place-items:center;flex:0 0 50px;border-radius:17px;background:linear-gradient(135deg,#e8f6ff,#f8fcff);font-size:24px}
+.race-summary-label{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.race-summary-label strong{font-size:clamp(16px,2.4vw,20px);font-weight:800}
+.race-summary-label small,.race-summary-total small{font-size:12px;color:var(--muted);line-height:1.5}
+.race-summary-total{display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 12px;border-radius:15px;background:#edf8ff;min-width:78px}
+.race-summary-total strong{font-size:25px;line-height:1.1;color:var(--blue-dark)}
+.race-summary-chevron{font-size:25px;color:var(--blue-dark);transition:transform .25s ease;margin-inline-start:2px}
+.race-summary-toggle[aria-expanded="true"] .race-summary-chevron{transform:rotate(180deg)}
+.race-summary-panel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding-top:14px;animation:fadeUp .28s ease}
+/* Keep the race details truly hidden until the visitor opens them. */
+.race-summary-panel[hidden]{display:none!important}
+.race-distance-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:23px 13px;border:1px solid #e0eef7;border-radius:22px;background:linear-gradient(180deg,#fff,#f7fcff);box-shadow:0 8px 24px rgba(38,102,145,.045)}
+.race-distance-icon{font-size:23px;width:45px;height:45px;display:grid;place-items:center;border-radius:15px;background:#eaf7ff}
+.race-distance-card>strong{font-size:27px;color:var(--blue-deep);line-height:1.2}
+.race-distance-count{display:flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:center}
+.race-distance-count b{font-size:17px;color:var(--blue-dark)}
+.race-distance-count small{font-size:12px;color:var(--muted)}
+[dir="rtl"] .race-summary-toggle{text-align:right}
+@media(max-width:600px){.race-summary-wrap{margin-top:30px}.race-summary-toggle{gap:10px;padding:16px 13px;border-radius:20px}.race-summary-icon{width:42px;height:42px;flex-basis:42px;border-radius:14px;font-size:21px}.race-summary-label strong{font-size:15px}.race-summary-label small{font-size:11px}.race-summary-total{min-width:56px;padding:7px 8px}.race-summary-total strong{font-size:22px}.race-summary-total small{font-size:10px}.race-summary-panel{grid-template-columns:1fr;gap:10px}.race-distance-card{display:grid;grid-template-columns:44px 1fr auto;align-items:center;text-align:start;padding:14px 16px;gap:12px}.race-distance-icon{grid-row:span 1}.race-distance-card>strong{font-size:22px}.race-distance-count{flex-direction:column;align-items:flex-end;gap:1px}.race-distance-count small{text-align:end;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.race-summary-toggle,.race-summary-chevron{transition:none}.race-summary-panel{animation:none}}
+
 #achievements{background:linear-gradient(180deg,#fbfdff,#f2faff)}
 .achievements-intro{
   max-width:850px;margin:0 auto 28px;text-align:center;color:var(--muted);font-size:14px;
@@ -241,6 +267,38 @@ footer strong{color:var(--blue-deep)}
 [dir="rtl"] .nav,.rtl .nav{direction:rtl}
 [dir="rtl"] .category-title{direction:rtl}
 [dir="rtl"] .langs{direction:ltr}
+
+
+/* ===== Calm, polished interaction + centered registration invitation ===== */
+:where(a,button,input,textarea,select){-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+:where(a,button){transition:transform .22s ease, box-shadow .22s ease, background-color .22s ease, border-color .22s ease}
+:where(a,button):focus-visible{outline:3px solid rgba(40,127,193,.45);outline-offset:4px}
+.btn{min-height:48px}
+.btn:active,.social:active,.langs button:active,.menu:active{transform:scale(.975)}
+.journey-cta{padding:46px 0 58px;background:linear-gradient(180deg,#fbfdff 0%,#edf8ff 50%,#fbfdff 100%)}
+.journey-cta-inner{position:relative;overflow:hidden;text-align:center;padding:clamp(32px,6vw,66px) 24px;border:1px solid #dceef9;border-radius:34px;background:radial-gradient(circle at 15% 0%,rgba(112,190,238,.18),transparent 35%),linear-gradient(135deg,#fff 0%,#f4fbff 60%,#fff 100%);box-shadow:0 20px 55px rgba(38,102,145,.09)}
+.journey-cta-inner:before,.journey-cta-inner:after{content:"";position:absolute;border:1px solid rgba(90,174,232,.15);border-radius:50%;pointer-events:none}
+.journey-cta-inner:before{width:220px;height:220px;top:-145px;right:-50px}
+.journey-cta-inner:after{width:160px;height:160px;bottom:-115px;left:-45px}
+.journey-spark{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:15px;color:#287fc1;background:#e7f5ff;font-size:21px;margin-bottom:14px}
+.journey-kicker{color:var(--blue-dark);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.journey-cta h2{position:relative;max-width:800px;margin:12px auto 14px;font-family:"Playfair Display",serif;font-size:clamp(36px,6vw,64px);line-height:1.08;letter-spacing:-.025em;color:var(--blue-deep)}
+.journey-copy{max-width:620px;margin:0 auto;color:var(--muted);font-size:clamp(15px,2vw,18px)}
+.journey-button{position:relative;margin-top:26px;padding:17px 28px;min-height:58px;font-size:15px;box-shadow:0 13px 30px rgba(40,127,193,.24)}
+.journey-button span{font-size:18px;transition:transform .2s ease}
+.journey-button:hover span{transform:translate(3px,-2px)}
+.journey-note{display:block;margin-top:13px;color:#7b8f9e;font-size:12px}
+@media(max-width:600px){
+ .journey-cta{padding:28px 0 38px}
+ .journey-cta-inner{padding:34px 19px;border-radius:26px}
+ .journey-cta h2{font-size:clamp(34px,9vw,46px)}
+ .journey-button{width:100%;max-width:360px;padding:15px 18px}
+ .actions .btn{min-height:50px}
+ .hero-social{gap:8px}
+ .social{padding:10px 13px}
+ .reviews-top{grid-template-columns:1fr;text-align:center;justify-items:center}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 @media(max-width:900px){
   .nav-links{display:none}
@@ -350,7 +408,7 @@ footer strong{color:var(--blue-deep)}
         Une approche humaine, précise et exigeante pour apprendre à mieux nager, gagner en confiance et aller plus loin.
       </p>
       <div class="actions">
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdvsr5kJIFYgJ50f03Rn2EW4vbDbC-Nb75rt2B1fD5uxfwp8g/viewform?pli=1" target="_blank" rel="noopener" data-i18n="register">S'inscrire</a>
+        <a class="btn btn-primary registration-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdvsr5kJIFYgJ50f03Rn2EW4vbDbC-Nb75rt2B1fD5uxfwp8g/viewform?pli=1" target="_blank" rel="noopener" data-i18n="register">S'inscrire</a>
         <a class="btn btn-light" href="#achievements" data-i18n="discover">Découvrir son parcours</a>
       </div>
       <div class="hero-social">
@@ -364,10 +422,29 @@ footer strong{color:var(--blue-deep)}
     </div>
   </div>
 
-  <div class="container stats-strip">
-    <div class="stat"><strong>6 × 5 km</strong><span data-i18n="stat5">participations enregistrées</span></div>
-    <div class="stat"><strong>3 × 10 km</strong><span data-i18n="stat10">participations enregistrées</span></div>
-    <div class="stat"><strong>2 × 20 km</strong><span data-i18n="stat20">ultramarathons enregistrés</span></div>
+  <div class="container race-summary-wrap">
+    <button class="race-summary-toggle" id="raceSummaryToggle" type="button" aria-expanded="false" aria-controls="raceSummaryPanel">
+      <span class="race-summary-icon" aria-hidden="true">🏊‍♀️</span>
+      <span class="race-summary-label"><strong data-i18n="raceSummaryTitle">Toutes les courses enregistrées</strong><small data-i18n="raceSummaryHint">Appuyez pour découvrir les distances et participations</small></span>
+      <span class="race-summary-total"><strong>11</strong><small data-i18n="raceSummaryTotal">participations</small></span>
+      <span class="race-summary-chevron" aria-hidden="true">⌄</span>
+    </button>
+    <div class="race-summary-panel" id="raceSummaryPanel" hidden>
+      <div class="race-distance-card"><span class="race-distance-icon" aria-hidden="true">🌊</span><strong>5 km</strong><span class="race-distance-count"><b>6</b><small data-i18n="raceEntries">participations enregistrées</small></span></div>
+      <div class="race-distance-card"><span class="race-distance-icon" aria-hidden="true">🏅</span><strong>10 km</strong><span class="race-distance-count"><b>3</b><small data-i18n="raceEntries">participations enregistrées</small></span></div>
+      <div class="race-distance-card"><span class="race-distance-icon" aria-hidden="true">🐬</span><strong>20 km</strong><span class="race-distance-count"><b>2</b><small data-i18n="raceUltra">courses d’ultramarathon</small></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="journey-cta" id="start-journey">
+  <div class="container journey-cta-inner">
+    <span class="journey-spark" aria-hidden="true">✦</span>
+    <p class="journey-kicker" data-i18n="journeyKicker">Votre prochaine étape commence ici</p>
+    <h2 data-i18n="journeyTitle">Prête à plonger dans une nouvelle aventure&nbsp;?</h2>
+    <p class="journey-copy" data-i18n="journeyText">Un premier clic peut ouvrir la voie à plus de confiance, de technique et de liberté dans l’eau.</p>
+    <a class="btn btn-primary journey-button registration-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdvsr5kJIFYgJ50f03Rn2EW4vbDbC-Nb75rt2B1fD5uxfwp8g/viewform?pli=1" target="_blank" rel="noopener" data-i18n="journeyButton">✦ Commencez votre parcours <span aria-hidden="true">↗</span></a>
+    <span class="journey-note" data-i18n="journeyNote">Simplement. À votre rythme. À votre niveau.</span>
   </div>
 </section>
 
@@ -636,6 +713,17 @@ document.getElementById("achBtn").addEventListener("click", function(){
   }
 });
 
+const raceSummaryToggle = document.getElementById("raceSummaryToggle");
+const raceSummaryPanel = document.getElementById("raceSummaryPanel");
+raceSummaryToggle.addEventListener("click", () => {
+  const expanded = raceSummaryToggle.getAttribute("aria-expanded") === "true";
+  raceSummaryToggle.setAttribute("aria-expanded", String(!expanded));
+  raceSummaryPanel.hidden = expanded;
+  if (!expanded) {
+    setTimeout(() => raceSummaryPanel.scrollIntoView({behavior:"smooth", block:"nearest"}), 60);
+  }
+});
+
 document.getElementById("menuBtn").addEventListener("click",()=>{
   document.getElementById("nav").classList.toggle("open");
 });
@@ -649,8 +737,8 @@ const translations = {
     navApproach:"Mon approche",navMethod:"Ma méthode",navAbout:"Qui suis-je ?",navAchievements:"Réalisations",navReviews:"Avis",navContact:"Contact",
     eyebrow:"Coach de natation · Eau libre · Ultramarathon",
     heroText:"Une approche humaine, précise et exigeante pour apprendre à mieux nager, gagner en confiance et aller plus loin.",
-    register:"S'inscrire",discover:"Découvrir son parcours",
-    stat5:"participations enregistrées",stat10:"participations enregistrées",stat20:"ultramarathons enregistrés",
+    register:"S'inscrire",discover:"Découvrir son parcours",journeyKicker:"Votre prochaine étape commence ici",journeyTitle:"Prête à plonger dans une nouvelle aventure ?",journeyText:"Un premier clic peut ouvrir la voie à plus de confiance, de technique et de liberté dans l’eau.",journeyButton:"✦ Commencez votre parcours",journeyNote:"Simplement. À votre rythme. À votre niveau.",
+    stat5:"participations enregistrées",stat10:"participations enregistrées",stat20:"ultramarathons enregistrés",raceSummaryTitle:"Toutes les courses enregistrées",raceSummaryHint:"Appuyez pour découvrir les distances et participations",raceSummaryTotal:"participations",raceEntries:"participations enregistrées",raceUltra:"courses d’ultramarathon",
     approachKicker:"Mon approche",approachTitle:"Chaque nageur mérite une méthode qui lui ressemble.",
     approachIntro:"Du premier contact avec l'eau jusqu'à la préparation à la compétition, le coaching s'adapte au niveau, aux objectifs et au rythme de chacun.",
     confidence:"Confiance",confidenceText:"Construire une relation sereine avec l'eau et dépasser progressivement les peurs.",
@@ -674,8 +762,8 @@ const translations = {
     navApproach:"My approach",navMethod:"My method",navAbout:"About me",navAchievements:"Achievements",navReviews:"Reviews",navContact:"Contact",
     eyebrow:"Swim Coach · Open Water · Ultramarathon",
     heroText:"A human, precise and demanding approach to help you swim better, build confidence and go further.",
-    register:"Register",discover:"Discover her journey",
-    stat5:"recorded participations",stat10:"recorded participations",stat20:"recorded ultramarathons",
+    register:"Register",discover:"Discover her journey",journeyKicker:"Your next step starts here",journeyTitle:"Ready to dive into a new adventure?",journeyText:"One small click can open the way to more confidence, better technique and freedom in the water.",journeyButton:"✦ Start your journey",journeyNote:"Simply. At your pace. At your level.",
+    stat5:"recorded participations",stat10:"recorded participations",stat20:"recorded ultramarathons",raceSummaryTitle:"All recorded races",raceSummaryHint:"Tap to explore distances and race entries",raceSummaryTotal:"participations",raceEntries:"recorded participations",raceUltra:"ultramarathon races",
     approachKicker:"My approach",approachTitle:"Every swimmer deserves an approach that fits them.",
     approachIntro:"From first contact with the water to competition preparation, coaching adapts to each swimmer's level, goals and pace.",
     confidence:"Confidence",confidenceText:"Build a calm relationship with the water and gradually overcome fears.",
@@ -697,10 +785,10 @@ const translations = {
   },
   ar:{
     navApproach:"منهجي",navMethod:"طريقتي",navAbout:"من أنا؟",navAchievements:"الإنجازات",navReviews:"آراء العملاء",navContact:"تواصل",
-    eyebrow:"مدربة سباحة · مياه مفتوحة · ألترا ماراثون",
+    eyebrow:"مدربة سباحة · مياه مفتوحة · ألترا ماراثون",journeyKicker:"خطوتك القادمة تبدأ من هنا",journeyTitle:"هل أنت مستعدة لبدء رحلة جديدة؟",journeyText:"ضغطة واحدة قد تكون بداية ثقة أكبر وتقنية أفضل وحرية أكثر في الماء.",journeyButton:"✦ ابدئي رحلتك الآن",journeyNote:"ببساطة، وبإيقاعك، وبما يناسب مستواك.",
     heroText:"منهج إنساني ودقيق ومتطلب يساعد السباح على تحسين مستواه وبناء الثقة والوصول إلى أبعد.",
     register:"التسجيل",discover:"اكتشف مسيرتها",
-    stat5:"مشاركات مسجلة",stat10:"مشاركات مسجلة",stat20:"سباقات ألترا ماراثون مسجلة",
+    stat5:"مشاركات مسجلة",stat10:"مشاركات مسجلة",stat20:"سباقات ألترا ماراثون مسجلة",raceSummaryTitle:"جميع السباقات المسجلة",raceSummaryHint:"اضغط لاكتشاف المسافات وعدد المشاركات",raceSummaryTotal:"مشاركة",raceEntries:"مشاركات مسجلة",raceUltra:"سباقات ألترا ماراثون",
     approachKicker:"منهجي",approachTitle:"كل سباح يستحق أسلوبًا يناسبه.",
     approachIntro:"من أول خطوة في الماء إلى التحضير للمنافسات، يتكيف التدريب مع مستوى السباح وأهدافه وإيقاعه.",
     confidence:"الثقة",confidenceText:"بناء علاقة هادئة مع الماء والتغلب على الخوف تدريجيًا.",
@@ -839,6 +927,63 @@ reviewForm.addEventListener("submit", async (event)=>{
     reviewSubmit.disabled = false;
     reviewSubmit.style.opacity = "1";
   }
+});
+
+
+// A tiny, soft confirmation chime plays only after the visitor taps a registration link.
+// It uses the browser's Web Audio API, so no external sound file or autoplay is involved.
+function playRegistrationChime(){
+  try{
+    const AudioCtx=window.AudioContext||window.webkitAudioContext;
+    if(!AudioCtx) return;
+    const ctx=new AudioCtx();
+    const now=ctx.currentTime;
+    const master=ctx.createGain();
+    master.gain.setValueAtTime(0.0001,now);
+    master.gain.exponentialRampToValueAtTime(0.055,now+0.025);
+    master.gain.exponentialRampToValueAtTime(0.0001,now+0.48);
+    master.connect(ctx.destination);
+    [659.25, 880].forEach((freq,index)=>{
+      const osc=ctx.createOscillator();
+      const gain=ctx.createGain();
+      osc.type="sine";
+      osc.frequency.setValueAtTime(freq,now+index*.075);
+      gain.gain.setValueAtTime(0.0001,now+index*.075);
+      gain.gain.exponentialRampToValueAtTime(index===0?0.55:0.35,now+index*.075+0.025);
+      gain.gain.exponentialRampToValueAtTime(0.0001,now+0.42);
+      osc.connect(gain);gain.connect(master);
+      osc.start(now+index*.075);osc.stop(now+0.46);
+    });
+    setTimeout(()=>ctx.close().catch(()=>{}),650);
+  }catch(e){/* Sound is optional; navigation must always work. */}
+}
+document.querySelectorAll(".registration-link").forEach(link=>link.addEventListener("click",playRegistrationChime));
+
+// A tiny, gentle tap tone for interactive elements throughout the site.
+// Registration keeps its slightly brighter two-note chime above.
+function playSoftTapSound(){
+  try{
+    const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+    if(!AudioContextClass)return;
+    const ctx=new AudioContextClass();
+    const now=ctx.currentTime;
+    const osc=ctx.createOscillator();
+    const gain=ctx.createGain();
+    osc.type="sine";
+    osc.frequency.setValueAtTime(587.33,now);
+    osc.frequency.exponentialRampToValueAtTime(783.99,now+0.09);
+    gain.gain.setValueAtTime(0.0001,now);
+    gain.gain.exponentialRampToValueAtTime(0.025,now+0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001,now+0.16);
+    osc.connect(gain);gain.connect(ctx.destination);
+    osc.start(now);osc.stop(now+0.17);
+    setTimeout(()=>ctx.close().catch(()=>{}),250);
+  }catch(e){/* Sound is optional; interactions still work normally. */}
+}
+document.addEventListener("click",event=>{
+  const control=event.target.closest('button, a, [role="button"], summary, input[type="checkbox"], input[type="radio"], select');
+  if(!control || control.disabled || control.classList.contains("registration-link"))return;
+  playSoftTapSound();
 });
 
 function setLanguage(lang){
