@@ -27,7 +27,7 @@
   --radius:26px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:100px}#booking{scroll-margin-top:100px}
 body{
   font-family:"DM Sans",sans-serif;
   color:var(--ink);
@@ -325,14 +325,84 @@ footer strong{color:var(--blue-deep)}
   .category-title{align-items:flex-start;flex-direction:column}
 }
 
+
+
+/* ===== Prominent booking call-to-action ===== */
+.booking-hero-cta{min-height:58px;padding:16px 34px;font-size:19px;font-weight:850;letter-spacing:.2px;border-radius:16px;box-shadow:0 14px 32px rgba(47,133,190,.30),inset 0 1px 0 rgba(255,255,255,.22);transition:transform .22s ease,box-shadow .22s ease,background .22s ease}
+.booking-hero-cta:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(47,133,190,.36)}
+.booking-hero-cta:focus-visible{outline:3px solid rgba(65,151,207,.42);outline-offset:4px}
+@media(max-width:600px){.booking-hero-cta{min-height:54px;padding:14px 27px;font-size:18px}}
+
+/* ===== Private lesson booking form ===== */
+.booking-price{margin:0;padding:12px 14px;border-radius:12px;background:#eef8fd;color:var(--blue-deep);font-weight:800}.booking-group-check{display:flex;align-items:flex-start;gap:10px;color:var(--blue-deep);font-size:14px;line-height:1.55}.booking-group-check input{margin-top:4px;accent-color:var(--blue-deep)}.booking-field input[type=date]{direction:ltr;text-align:left}
+.booking-step{display:grid;gap:11px;padding:17px 18px;border:1px solid #e1eff7;border-radius:18px;background:linear-gradient(145deg,#fbfdff,#f2f9fe)}
+.booking-step[hidden]{display:none}
+.booking-step-title{color:var(--blue-deep);font-size:14px;font-weight:800}
+.booking-choice-row,.booking-slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.booking-choice{min-height:47px;padding:10px 13px;border:1px solid #d6e8f3;border-radius:13px;background:#fff;color:var(--blue-deep);font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:background .18s ease,border-color .18s ease,transform .18s ease}
+.booking-choice:hover:not(:disabled){border-color:#69b5df;transform:translateY(-1px)}
+.booking-choice.selected{background:#e4f4fd;border-color:#55a9d9;box-shadow:inset 0 0 0 1px #55a9d9}
+.booking-choice.unavailable,.booking-choice:disabled{background:#f0f2f4;color:#7d8992;border-color:#e2e7eb;text-decoration:none;cursor:not-allowed}
+.booking-slots{grid-template-columns:repeat(2,minmax(0,1fr))}
+.booking-submit:disabled{opacity:.48;cursor:not-allowed;transform:none}
+
+.booking-section{background:linear-gradient(180deg,#f7fbff 0%,#eef8ff 100%)}
+.booking-shell{max-width:760px;margin:0 auto;padding:clamp(24px,5vw,42px);background:rgba(255,255,255,.94);border:1px solid #dcecf7;border-radius:30px;box-shadow:0 18px 50px rgba(38,102,145,.09)}
+.booking-form{display:grid;gap:18px;margin-top:24px}
+.booking-field{display:grid;gap:8px}
+.booking-field label{color:var(--blue-deep);font-size:14px;font-weight:750}
+.booking-field input,.booking-field select{width:100%;min-height:52px;padding:13px 15px;border:1px solid #d6e4ed;border-radius:13px;background:#fbfdff;color:var(--blue-deep);font:inherit;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.booking-field input:focus,.booking-field select:focus{border-color:#5aaee8;box-shadow:0 0 0 4px rgba(90,174,232,.14)}
+.booking-submit{width:100%;justify-content:center;min-height:54px;margin-top:4px}
+.booking-note{margin:0;color:var(--muted);font-size:12px;text-align:center}
+.booking-message{margin:0;padding:12px 14px;border-radius:12px;text-align:center;font-size:14px;font-weight:700;background:#eef8ff;color:#185d87;border:1px solid #cfe7f6}
+.booking-message.error{background:#fff4f3;color:#a83232;border-color:#f4d2cf}
+@media(max-width:600px){.booking-shell{padding:23px 18px;border-radius:24px}.booking-form{gap:15px}}
+
+
+/* ===== Professional, compact booking presentation ===== */
+.booking-shell{max-width:790px;padding:clamp(20px,4vw,34px);border-radius:25px;box-shadow:0 16px 42px rgba(38,102,145,.075)}
+.booking-form{gap:13px;margin-top:19px}
+.booking-field{gap:6px}
+.booking-field label{font-size:12.5px}
+.booking-field input,.booking-field select{min-height:45px;padding:10px 13px;border-radius:11px;font-size:13px}
+.booking-offers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:2px}
+.booking-offer-group{min-width:0;padding:14px 15px;border:1px solid #e2edf4;border-radius:15px;background:#fff;box-shadow:0 5px 16px rgba(38,102,145,.035)}
+.booking-offer-title{margin:0 0 8px;color:var(--blue-deep);font-size:13px;font-weight:800}
+.booking-offer-copy{margin:0;color:#405a6b;font-size:12px;line-height:1.7;white-space:pre-line}
+.booking-offer-note{margin:9px 0 0;padding-top:8px;border-top:1px solid #edf2f6;color:#687d8a;font-size:11px;line-height:1.6}
+.booking-step{gap:9px;padding:14px 15px;border-radius:15px}
+.booking-step-title{font-size:13px}
+.booking-group-check{gap:9px;font-size:13px;line-height:1.5}
+.booking-price{padding:10px 13px;font-size:13px}
+.booking-choice{min-height:43px;padding:9px 11px;border-radius:11px;font-size:12px}
+.booking-note{font-size:11px;line-height:1.6}
+.booking-submit{min-height:49px;font-size:14px}
+@media(max-width:620px){.booking-shell{padding:19px 15px;border-radius:20px}.booking-form{gap:11px}.booking-offers{grid-template-columns:1fr;gap:9px}.booking-offer-group{padding:12px 13px}.booking-slots{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 /* ===== Elegant client reviews ===== */
 .reviews-shell{background:linear-gradient(145deg,#fff,#f5fbff);border:1px solid #dfeef7;border-radius:32px;padding:24px;box-shadow:0 18px 55px rgba(38,102,145,.08)}
 .reviews-top{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:18px 20px;background:rgba(255,255,255,.82);border:1px solid #e5f0f6;border-radius:22px}
 .reviews-stars{letter-spacing:3px;color:#f0b84b;font-size:18px;white-space:nowrap}
 .reviews-top strong{display:block;color:var(--blue-deep);font-size:15px}
 .reviews-top span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
-.reviews-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
-.review-card{position:relative;background:#fff;border:1px solid #e3edf4;border-radius:24px;padding:26px;box-shadow:0 9px 28px rgba(38,102,145,.055);overflow:hidden}
+.reviews-list{position:relative;margin:24px auto 0;max-width:860px;padding:8px 8px 2px}
+.reviews-viewport{overflow:hidden;border-radius:30px;touch-action:pan-y;}
+.reviews-track{display:flex;direction:ltr;transition:transform .58s cubic-bezier(.22,.75,.25,1);will-change:transform}
+.review-slide{flex:0 0 100%;min-width:0;padding:10px 12px 22px;box-sizing:border-box}
+.review-card{position:relative;min-height:245px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(145deg,#fff 0%,#fbfdff 72%,#f0f8fd 100%);border:1px solid #dcebf5;border-radius:30px;padding:clamp(25px,5vw,42px);box-shadow:0 16px 42px rgba(38,102,145,.10);overflow:hidden;text-align:start}
+.review-card:after{content:"";position:absolute;inset:auto -55px -90px auto;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle,rgba(190,226,247,.32),transparent 70%);pointer-events:none}
+.review-card:before{content:"“";position:absolute;right:26px;top:2px;font-family:"Playfair Display",serif;font-size:100px;color:#e2f1fa;line-height:1}
+.review-card>*{position:relative;z-index:1}
+.review-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin:4px auto 0}
+.review-arrow{width:42px;height:42px;border:1px solid #d8eaf5;border-radius:50%;background:#fff;color:var(--blue-deep);font-size:22px;display:grid;place-items:center;cursor:pointer;box-shadow:0 5px 16px rgba(38,102,145,.08);transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.review-arrow:hover{transform:translateY(-2px);background:#eff8fe;border-color:#b8dcef}
+.review-arrow:focus-visible,.review-dot:focus-visible{outline:3px solid rgba(65,151,207,.35);outline-offset:3px}
+.review-dots{display:flex;align-items:center;justify-content:center;gap:7px;max-width:min(45vw,240px);overflow-x:auto;padding:8px 3px;scrollbar-width:none}
+.review-dot{width:7px;height:7px;flex:0 0 7px;border:0;border-radius:20px;background:#cbdde9;padding:0;cursor:pointer;transition:width .25s ease,background .25s ease}
+.review-dot.active{width:23px;background:var(--blue-dark)}
+.review-count{min-width:42px;text-align:center;color:var(--muted);font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}
+.review-empty{grid-column:1/-1;text-align:center;padding:45px 20px;border:1px dashed #cfe6f4;border-radius:24px;background:rgba(255,255,255,.55)}
 .review-card:before{content:"“";position:absolute;right:22px;top:4px;font-family:"Playfair Display",serif;font-size:70px;color:#dceffb;line-height:1}
 .review-meta{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .review-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#dff3ff,#f6eaf4);display:grid;place-items:center;color:var(--blue-deep);font-weight:800}
@@ -373,8 +443,115 @@ footer strong{color:var(--blue-deep)}
 .review-form-card input,.review-form-card textarea{width:100%;border:1px solid #dce9f1;background:#fbfdff;border-radius:15px;padding:12px 14px;outline:none;font:inherit;color:var(--ink);resize:vertical}
 .review-form-card input:focus,.review-form-card textarea:focus{border-color:#9fd4f2;box-shadow:0 0 0 4px rgba(90,174,232,.1)}
 .review-submit{margin-top:18px}
-@media(max-width:800px){.reviews-top{grid-template-columns:1fr}.reviews-top .btn{width:100%}.reviews-list{grid-template-columns:1fr}}
+@media(max-width:800px){.reviews-top{grid-template-columns:1fr}.reviews-top .btn{width:100%}.reviews-list{padding:4px 0 0}.review-slide{padding:8px 3px 18px}.review-card{min-height:260px;border-radius:25px;padding:27px 23px}.review-message{font-size:17px}.review-controls{gap:12px}.review-arrow{width:39px;height:39px}}
+
+/* Refined compact review card styling */
+.reviews-shell{background:linear-gradient(145deg,#f8fcff 0%,#eef7fc 52%,#f9fcff 100%);border:1px solid #d4e7f3;border-radius:26px;padding:clamp(15px,2.5vw,22px);box-shadow:0 12px 34px rgba(39,99,137,.07)}
+.reviews-top{background:rgba(255,255,255,.9);border:1px solid #dcebf4;border-radius:18px;padding:13px 17px;gap:14px}
+.reviews-list{max-width:720px;margin:15px auto 0;padding:4px 7px 0}
+.reviews-viewport{border-radius:22px}
+.review-slide{padding:7px 9px 13px}
+.review-card{min-height:174px;max-width:100%;background:linear-gradient(135deg,#ffffff 0%,#f8fcff 58%,#edf7fc 100%);border:1px solid #d5e7f2;border-radius:22px;padding:22px 26px;box-shadow:0 9px 25px rgba(42,105,145,.08)}
+.review-card:after{width:155px;height:155px;inset:auto -42px -75px auto;background:radial-gradient(circle,rgba(176,218,241,.25),transparent 70%)}
+.review-card:before{right:20px;top:0;font-size:62px;color:#e4f1f8}
+.review-meta{gap:10px;margin-bottom:9px}
+.review-avatar{width:36px;height:36px;font-size:12px;background:linear-gradient(135deg,#d9effb,#eef6fb);border:1px solid #d5e9f5}
+.review-from{font-size:10px;line-height:1.35}
+.review-from strong{font-size:12px}
+.review-rating{font-size:11px;letter-spacing:1.5px;margin-bottom:6px}
+.review-message{font-family:inherit;color:#506779;font-size:14px;line-height:1.65;font-weight:400}
+.review-date{margin-top:9px;font-size:10px}
+.review-controls{gap:13px;margin-top:1px}
+.review-arrow{width:36px;height:36px;font-size:19px;background:#fafdff;border-color:#d4e6f1;box-shadow:0 3px 10px rgba(38,102,145,.06)}
+.review-dot{background:#c6dce9}
+.review-dot.active{background:#4b91bb}
+.review-count{font-size:10px}
+@media(max-width:800px){.reviews-shell{padding:14px;border-radius:22px}.reviews-top{padding:12px 14px}.reviews-list{padding:3px 0 0;margin-top:12px}.review-slide{padding:6px 3px 11px}.review-card{min-height:155px;border-radius:19px;padding:19px 18px}.review-card:before{right:14px;top:0;font-size:54px}.review-meta{margin-bottom:8px}.review-avatar{width:33px;height:33px}.review-message{font-size:13px;line-height:1.6}.review-rating{font-size:10px;margin-bottom:5px}.review-date{margin-top:7px}.review-controls{gap:10px}.review-arrow{width:34px;height:34px}}
+
+
+/* ===== Balanced page rhythm: tighter, consistent spacing ===== */
+@media (min-width:601px){
+  section{padding:72px 0}
+  .hero{padding-bottom:62px}
+  .section-head{margin-bottom:34px}
+  .journey-cta{padding:30px 0 36px}
+  .journey-cta-inner{padding:42px 24px}
+  .cards{gap:16px}
+  .card{padding:25px}
+  .about-grid{gap:42px}
+  .race-summary-wrap{margin-top:38px}
+}
+@media (max-width:600px){
+  section{padding:46px 0}
+  .hero{padding-top:112px;padding-bottom:30px}
+  .hero-grid{gap:24px}
+  .hero-photo img{height:310px}
+  .section-head{margin-bottom:25px}
+  .section-kicker{font-size:11px;letter-spacing:.12em}
+  .section-head h2{font-size:clamp(30px,8.2vw,38px);line-height:1.13;margin:8px 0 10px}
+  .section-head p{font-size:15px;line-height:1.7}
+  #approche{padding-top:34px;padding-bottom:44px}
+  .cards,.achievement-grid,.media-grid{gap:12px}
+  .card{padding:21px;border-radius:21px}
+  .card-icon{width:42px;height:42px;border-radius:14px;font-size:19px;margin-bottom:12px}
+  .card h3{font-size:17px;margin-bottom:6px}
+  .card p{font-size:13px;line-height:1.65}
+  .about-grid{gap:24px}
+  .about-photo img{height:350px}
+  .about-text h2{font-size:32px;line-height:1.12;margin-bottom:14px}
+  .about-text p{font-size:14px;line-height:1.7;margin-bottom:11px}
+  .signature{font-size:21px;margin-top:14px}
+  .journey-cta{padding:18px 0 22px}
+  .journey-cta-inner{padding:26px 17px;border-radius:23px}
+  .journey-spark{width:36px;height:36px;font-size:18px;margin-bottom:9px}
+  .journey-cta h2{font-size:clamp(29px,8vw,38px);line-height:1.12;margin:8px auto 10px}
+  .journey-copy{font-size:14px;line-height:1.65}
+  .journey-button{margin-top:17px;min-height:50px;padding:13px 16px;font-size:14px}
+  .journey-note{margin-top:9px;font-size:11px}
+  .race-summary-wrap{margin-top:24px}
+  .race-distance-card{padding:12px 13px}
+  .quote,.cta{padding:25px 19px}
+  .cta h2,.about-text h2{font-size:32px}
+  .booking-shell{padding:20px 16px}
+  .booking-form{gap:12px;margin-top:17px}
+  .booking-field{gap:6px}
+  .booking-field input,.booking-field select{min-height:47px;padding:10px 12px}
+  .reviews-shell{padding:12px;border-radius:20px}
+  .review-card{min-height:140px;padding:17px 16px}
+  .review-dialog{padding:25px 19px;border-radius:23px}
+  .review-form-card{padding:21px 17px}
+}
+
+
+/* Two-step interactive booking cards */
+.booking-card-step{margin-bottom:18px}
+.booking-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:11px}
+.session-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.booking-interactive-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;width:100%;min-height:104px;padding:14px 13px;border:1px solid rgba(35,75,91,.17);border-radius:14px;background:var(--card-bg,#fff);color:inherit;text-align:start;cursor:pointer;transition:border-color .18s ease,box-shadow .18s ease,background .18s ease;font:inherit}
+.booking-interactive-card:hover{border-color:var(--accent,#159b9b);box-shadow:0 5px 16px rgba(20,70,80,.08)}
+.booking-interactive-card.is-selected{border:2px solid var(--accent,#159b9b);background:rgba(21,155,155,.055);box-shadow:0 0 0 2px rgba(21,155,155,.07)}
+.booking-interactive-card .choice-title{font-size:14px;font-weight:700;line-height:1.35;padding-inline-end:18px}
+.booking-interactive-card .choice-meta{font-size:11px;line-height:1.55;opacity:.76}
+.booking-interactive-card .choice-price{font-size:16px;font-weight:750;letter-spacing:-.2px;margin-top:2px}
+.booking-interactive-card .choice-check{position:absolute;inset-inline-end:10px;top:10px;width:19px;height:19px;display:grid;place-items:center;border-radius:50%;background:var(--accent,#159b9b);color:white;font-size:12px;opacity:0;transform:scale(.8);transition:.18s}
+.booking-interactive-card.is-selected .choice-check{opacity:1;transform:scale(1)}
+.booking-card-note{font-size:11px;line-height:1.65;opacity:.78;margin:11px 2px 0}
+.booking-total-price{margin:13px 0 5px;padding:12px 14px;border-radius:12px;background:rgba(21,155,155,.075);font-size:14px;font-weight:700;line-height:1.5}
+.booking-total-price strong{font-size:19px;margin-inline-start:5px}
+@media(max-width:600px){.booking-choice-grid{gap:8px}.package-choice-grid{grid-template-columns:1fr}.booking-interactive-card{min-height:82px;padding:12px}.session-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.session-choice-grid .booking-interactive-card{min-height:86px}.booking-interactive-card .choice-title{font-size:13px}.booking-interactive-card .choice-meta{font-size:10px}.booking-interactive-card .choice-price{font-size:15px}}
+
+/* Refined interactive booking flow + weekend-only calendar */
+.booking-choice-grid{gap:10px!important}.booking-interactive-card{padding:13px 14px!important;border-radius:14px!important;min-height:86px!important;box-shadow:0 3px 14px rgba(18,45,65,.045)!important}.booking-interactive-card .choice-title{font-size:14px!important;line-height:1.35!important;font-weight:650!important}.booking-interactive-card .choice-meta{font-size:11px!important;line-height:1.45!important}.booking-interactive-card .choice-price{font-size:15px!important;font-weight:700!important}.booking-card-note{font-size:12px!important;line-height:1.65!important;margin:10px 0 5px!important}.booking-total-price{font-size:13px!important;margin:8px 0 0!important}.weekend-calendar{border:1px solid rgba(30,75,95,.13);border-radius:16px;padding:13px;background:var(--surface,#fff);max-width:440px}.calendar-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.calendar-toolbar strong{font-size:14px;font-weight:700}.calendar-nav{border:1px solid rgba(30,75,95,.16);background:transparent;border-radius:9px;width:34px;height:34px;font-size:21px;line-height:1;cursor:pointer;color:inherit}.calendar-weekdays,.calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.calendar-weekdays span{text-align:center;font-size:10px;font-weight:650;color:var(--muted,#75838b);padding:5px 0}.calendar-day{min-height:37px;border:1px solid transparent;border-radius:9px;background:transparent;color:inherit;font-size:12px;cursor:pointer}.calendar-day:disabled{opacity:.25;cursor:not-allowed}.calendar-day.weekend:not(:disabled){background:rgba(33,125,132,.09);border-color:rgba(33,125,132,.18)}.calendar-day.selected{background:#167d83!important;border-color:#167d83!important;color:white!important;font-weight:750}.calendar-day.today{box-shadow:inset 0 0 0 1px #167d83}.booking-weekend-note{font-size:11px}.booking-slots .slot-choice{position:relative}.booking-slots .slot-choice.unavailable{text-decoration:none;opacity:.72;cursor:not-allowed}.booking-slots .slot-choice .seat-count{display:block;font-size:10px;line-height:1.3;margin-top:3px;text-decoration:none}.booking-slots .slot-choice.unavailable .seat-count{text-decoration:none}.booking-group-check{font-size:12px!important;line-height:1.55!important}.booking-group-check input{accent-color:#167d83}
+@media(max-width:600px){.booking-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.package-choice-grid .booking-interactive-card:last-child{grid-column:1/-1}.booking-interactive-card{min-height:78px!important;padding:11px!important}.booking-interactive-card .choice-title{font-size:13px!important}.booking-interactive-card .choice-meta{font-size:10px!important}.weekend-calendar{padding:10px}.calendar-day{min-height:35px;font-size:11px}}
+
+/* Booking slot readability: never strike through times or seat counts, including RTL/mobile. */
+.booking-slots .slot-choice{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;min-width:0;white-space:normal;text-decoration:none!important;}
+.booking-slots .slot-time-label{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums;white-space:nowrap;text-decoration:none!important;}
+.booking-slots .slot-choice .seat-count{direction:rtl;unicode-bidi:plaintext;white-space:normal;text-align:center;text-decoration:none!important;}
+html[dir="rtl"] .booking-slots .slot-choice{direction:rtl;}
+@media(max-width:600px){.booking-slots{gap:7px}.booking-slots .slot-choice{padding:9px 5px;font-size:12px;min-height:54px}.booking-slots .slot-choice .seat-count{font-size:10px;line-height:1.35}}
 </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
@@ -387,6 +564,7 @@ footer strong{color:var(--blue-deep)}
       <a href="#about" data-i18n="navAbout">Qui suis-je ?</a>
       <a href="#achievements" data-i18n="navAchievements">Réalisations</a>
       <a href="#reviews" data-i18n="navReviews">Avis</a>
+      <a href="#booking" data-i18n="navBooking">Réserver</a>
       <a href="#contact" data-i18n="navContact">Contact</a>
     </nav>
     <div class="langs">
@@ -408,7 +586,7 @@ footer strong{color:var(--blue-deep)}
         Du débutant au nageur confirmé, un coaching humain, précis et exigeant en piscine comme en eau libre, pour gagner en confiance, perfectionner sa technique et repousser ses limites.
       </p>
       <div class="actions">
-        <a class="btn btn-primary registration-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdvsr5kJIFYgJ50f03Rn2EW4vbDbC-Nb75rt2B1fD5uxfwp8g/viewform?pli=1" target="_blank" rel="noopener" data-i18n="register">S'inscrire</a>
+        <a class="btn btn-primary registration-link booking-hero-cta" href="#booking" data-i18n="register">Réservez</a>
         <a class="btn btn-light" href="#achievements" data-i18n="discover">Découvrir son parcours</a>
       </div>
       <div class="hero-social">
@@ -425,7 +603,7 @@ footer strong{color:var(--blue-deep)}
   <div class="container race-summary-wrap">
     <button class="race-summary-toggle" id="raceSummaryToggle" type="button" aria-expanded="false" aria-controls="raceSummaryPanel">
       <span class="race-summary-icon" aria-hidden="true">🏊‍♀️</span>
-      <span class="race-summary-label"><strong data-i18n="raceSummaryTitle">Toutes les courses enregistrées</strong><small data-i18n="raceSummaryHint">Appuyez pour découvrir les distances et participations</small></span>
+      <span class="race-summary-label"><strong data-i18n="raceSummaryTitle">Quelques courses enregistrées</strong><small data-i18n="raceSummaryHint">Appuyez pour découvrir les distances et participations</small></span>
       <span class="race-summary-total"><strong>11</strong><small data-i18n="raceSummaryTotal">participations</small></span>
       <span class="race-summary-chevron" aria-hidden="true">⌄</span>
     </button>
@@ -443,7 +621,7 @@ footer strong{color:var(--blue-deep)}
     <p class="journey-kicker" data-i18n="journeyKicker">Votre prochaine étape commence ici</p>
     <h2 data-i18n="journeyTitle">Prête à plonger dans une nouvelle aventure&nbsp;?</h2>
     <p class="journey-copy" data-i18n="journeyText">Un premier clic peut ouvrir la voie à plus de confiance, de technique et de liberté dans l’eau.</p>
-    <a class="btn btn-primary journey-button registration-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdvsr5kJIFYgJ50f03Rn2EW4vbDbC-Nb75rt2B1fD5uxfwp8g/viewform?pli=1" target="_blank" rel="noopener" data-i18n="journeyButton">✦ Commencez votre parcours <span aria-hidden="true">↗</span></a>
+    <a class="btn btn-primary journey-button booking-scroll-cta" href="#booking" data-i18n="journeyButton">✦ Réservez</a>
     <span class="journey-note" data-i18n="journeyNote">Simplement. À votre rythme. À votre niveau.</span>
   </div>
 </section>
@@ -481,9 +659,10 @@ footer strong{color:var(--blue-deep)}
       <h2>Khadija Bouchtaoui</h2>
       <p data-i18n="about1">Je suis une athlète d'ultramarathon, coach et, avant tout, une personne qui a construit sa vie autour de l'eau.</p>
       <p data-i18n="about2">J'ai grandi dans un club de natation, entre l'école, les entraînements et les étés passés au bord de la mer avec ma famille. L'océan n'a jamais été simplement un endroit où nager : il fait partie de mon histoire.</p>
-      <p data-i18n="about3">Des années plus tard, j'ai retrouvé la natation à travers l'eau libre et l'ultramarathon. Cette aventure m'a appris la patience, la résilience, la discipline, la conscience de soi et le contrôle émotionnel.</p>
-      <p data-i18n="about4">Pour moi, la natation est plus qu'un sport. C'est une forme de thérapie, une manière de se découvrir, de se dépasser et de devenir plus fort dans et hors de l'eau.</p>
-      <p data-i18n="about5">Devenir coach a été la continuité naturelle de ce parcours. Aujourd'hui, mon objectif reste le même : aider chaque nageur à découvrir ce dont il est réellement capable.</p>
+      <p data-i18n="about3">Des années plus tard, j'ai retrouvé la natation à travers l'eau libre et l'ultramarathon. Cette aventure m'a appris la patience, la résilience, la discipline, la conscience de soi et la gestion émotionnelle.</p>
+      <p data-i18n="about4">Pour moi, la natation est plus qu'un sport. C'est une forme de thérapie, une manière de se découvrir, de se dépasser et de devenir plus fort dans et hors de l'eau. Elle m'a surtout appris à m'aimer, à mieux me connaître et à trouver en moi une force que je ne soupçonnais pas.</p>
+      <p data-i18n="about5">Je suis profondément convaincue que la dimension psychologique est au cœur de la performance, même si elle est encore trop souvent négligée. L'état d'esprit, la confiance en soi et la maîtrise émotionnelle ne sont pas des éléments secondaires : ils sont indissociables de la technique et de la performance et conditionnent notre capacité à l'exprimer pleinement.</p>
+      <p data-i18n="about6">Devenir coach a été la continuité naturelle de ce parcours. Aujourd'hui, ma mission est d'aider chaque personne à se découvrir à travers l'eau, à construire une force physique et mentale, et à réaliser que ses limites sont souvent bien plus loin qu'il ne l'imagine.</p>
       <div class="signature">Khadija</div>
     </div>
   </div>
@@ -642,7 +821,7 @@ footer strong{color:var(--blue-deep)}
         <div class="reviews-stars" aria-hidden="true">★★★★★</div>
         <div>
           <strong data-i18n="reviewsPrivate">Votre expérience compte</strong>
-          <span data-i18n="reviewsPrivateText">Partagez quelques mots. Après validation, votre message pourra rejoindre cet espace.</span>
+          <span data-i18n="reviewsPrivateText">Partagez quelques mots : votre avis apparaîtra dès son enregistrement.</span>
         </div>
         <button class="btn btn-primary" type="button" id="reviewFormToggle" data-i18n="leaveReview">✦ Laisser mon avis</button>
       </div>
@@ -663,7 +842,7 @@ footer strong{color:var(--blue-deep)}
               <textarea id="reviewerComment" maxlength="700" rows="5" required placeholder="Écrivez votre expérience..."></textarea>
             </label>
             <button class="btn btn-primary review-submit" type="submit" id="reviewSubmit" data-i18n="reviewSend">Envoyer mon avis</button>
-            <p class="review-note" data-i18n="reviewNote">Pour protéger le site, les messages sont vérifiés avant leur publication.</p>
+            <p class="review-note" data-i18n="reviewNote">Votre avis sera publié immédiatement après son enregistrement.</p>
             <div class="review-success" id="reviewMsg" role="status" hidden></div>
           </form>
         </div>
@@ -676,6 +855,78 @@ footer strong{color:var(--blue-deep)}
           <p data-i18n="reviewEmptyText">Le premier témoignage sera affiché dans cette collection avec élégance.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="booking-section" id="booking">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker" data-i18n="bookingKicker">Réservation</div>
+      <h2 data-i18n="bookingTitle">Réservez votre séance de natation</h2>
+      <p data-i18n="bookingIntro">Choisissez le format de votre séance et laissez vos coordonnées. Khadija pourra ensuite confirmer votre demande.</p>
+    </div>
+
+    <div class="booking-shell">
+      <form id="bookingForm" class="booking-form" autocomplete="on">
+        <div class="booking-field booking-card-step">
+          <label data-i18n="bookingPackage">1. Choose your option</label>
+          <div id="packageChoiceCards" class="booking-choice-grid package-choice-grid" role="group" aria-label="Choose a session plan"></div>
+          <select id="packageSelect" name="packageCode" aria-hidden="true" tabindex="-1" hidden>
+            <option value="" selected>Choose a package...</option>
+            <option value="pack15">15 sessions</option><option value="pack10">10 sessions</option><option value="payg">Single session</option>
+          </select>
+          <p id="packageDetails" class="booking-note" data-i18n="bookingPackageHint" hidden>The price will update according to your selection.</p>
+        </div>
+
+        <div id="sessionSelection" class="booking-step" hidden>
+          <div class="booking-field booking-card-step">
+            <label data-i18n="bookingType">2. Choose session type</label>
+            <div id="sessionTypeCards" class="booking-choice-grid session-choice-grid" role="group" aria-label="Choose session type"></div>
+            <select id="sessionType" name="sessionType" aria-hidden="true" tabindex="-1" hidden disabled>
+              <option value="" selected>Choose a type...</option>
+            </select>
+          </div>
+          <div id="groupFormationWrap" class="booking-field" hidden>
+            <label class="booking-group-check"><input type="checkbox" id="groupFormation" required> <span data-i18n="bookingGroupFormation">Je confirme que les quatre participants constituent leur propre groupe.</span></label>
+          </div>
+          <p id="selectedPrice" class="booking-price" aria-live="polite"></p>
+        </div>
+
+        <div id="dateSelection" class="booking-step" hidden>
+          <div class="booking-field weekend-calendar-field">
+            <label data-i18n="bookingStartDate">3. Choose a Saturday or Sunday</label>
+            <div class="weekend-calendar" id="weekendCalendar" aria-label="Weekend start date calendar">
+              <div class="calendar-toolbar"><button type="button" id="calendarPrev" class="calendar-nav" aria-label="Previous month">‹</button><strong id="calendarMonthLabel"></strong><button type="button" id="calendarNext" class="calendar-nav" aria-label="Next month">›</button></div>
+              <div class="calendar-weekdays" id="calendarWeekdays"></div>
+              <div class="calendar-days" id="calendarDays" role="group" aria-label="Choose a weekend date"></div>
+            </div>
+            <input type="date" id="startDate" name="startDate" disabled hidden>
+            <p class="booking-note" id="weekendCalendarNote" data-i18n="bookingWeekendNote">Only Saturdays and Sundays can be selected.</p>
+          </div>
+        </div>
+
+        <div id="timeSelection" class="booking-step" hidden>
+          <label class="booking-step-title" data-i18n="bookingChooseTime">4. Choisissez l’horaire souhaité</label>
+          <div id="slotsContainer" class="booking-slots" aria-live="polite"></div>
+          <input type="hidden" id="selectedDay" name="booking_day">
+          <input type="hidden" id="selectedTime" name="booking_time">
+        </div>
+
+        <div class="booking-field">
+          <label for="fullName" data-i18n="bookingFullName">Nom complet</label>
+          <input type="text" id="fullName" name="fullName" autocomplete="name" required maxlength="120" data-i18n-placeholder="bookingFullNamePlaceholder" placeholder="Votre nom complet">
+        </div>
+        <div class="booking-field">
+          <label for="phoneNumber" data-i18n="bookingPhone">Téléphone / WhatsApp</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" autocomplete="tel" inputmode="tel" required maxlength="40" data-i18n-placeholder="bookingPhonePlaceholder" placeholder="Votre numéro de téléphone">
+        </div>
+
+        <button type="submit" id="bookingSubmit" class="btn btn-primary booking-submit" disabled data-i18n="bookingSubmit">Confirmer la réservation</button>
+        <p class="booking-note" data-i18n="bookingNote">Votre demande sera enregistrée dans Supabase. L’horaire demandé reste soumis à la confirmation de Khadija.</p>
+        <p id="bookingMsg" class="booking-message" role="status" aria-live="polite" hidden></p>
+      </form>
     </div>
   </div>
 </section>
@@ -734,11 +985,11 @@ document.querySelectorAll(".nav-links a").forEach(a=>{
 
 const translations = {
   fr:{
-    navApproach:"Mon approche",navMethod:"Ma méthode",navAbout:"Qui suis-je ?",navAchievements:"Réalisations",navReviews:"Avis",navContact:"Contact",
+    navApproach:"Mon approche",navMethod:"Ma méthode",navAbout:"Qui suis-je ?",navAchievements:"Réalisations",navReviews:"Avis",navBooking:"Réserver",bookingPacksHeading:"Forfaits de séances",bookingPacksSummary:"15 séances : individuel 1245€ · duo 900€ · trio 780€ (validité 6 mois)\n10 séances : individuel 830€ · duo 600€ · trio 520€ (validité 4 mois)\nGroupe de 4 : 10 séances 480€ · 15 séances 720€",bookingPacksNote:"La validité commence à la date de début choisie. Paiement en espèces ou échelonné ; l’échéancier est à confirmer avec Khadija.",bookingDirectHeading:"Séances à l’unité · sans forfait",bookingDirectSummary:"Individuel 90€ · duo 65€ · trio 55€ · groupe de 4 : 50€ par séance",bookingDirectNote:"Les séances à l’unité sont facturées par séance et ne comprennent ni forfait ni période de validité.",bookingPackagesOptgroup:"Forfaits de séances",bookingDirectOptgroup:"Séances à l’unité",bookingPackage:"1. Choisissez votre formule",bookingChoosePackage:"Choisissez une formule...",bookingPack15:"15 séances — individuel 1245€ / duo 900€ / trio 780€ — validité 6 mois",bookingPack10:"10 séances — individuel 830€ / duo 600€ / trio 520€ — validité 4 mois",bookingGroup4Pack10:"Groupe de 4 — 10 séances — 480€",bookingGroup4Pack15:"Groupe de 4 — 15 séances — 720€",bookingPayg:"À l’unité — individuel 90€ / duo 65€ / trio 55€ / groupe de 4 : 50€",bookingPackageHint:"Les tarifs s’afficheront selon la formule et le format choisis.",bookingPaymentTerms:"Paiement : espèces ou paiement échelonné. Les modalités et l’échéancier sont à confirmer avec Khadija avant validation.",bookingGroupFormation:"Je confirme que les quatre participants ont constitué leur propre groupe.",bookingStartDate:"3. Choisissez un samedi ou un dimanche",bookingWeekendNote:"Seuls les samedis et dimanches peuvent être sélectionnés.",bookingPriceLabel:"Tarif sélectionné",bookingSelectTypeAfterPackage:"Choisissez d’abord une formule.",bookingChooseTime:"4. Choisissez l’horaire souhaité",bookingKicker:"Réservation",bookingTitle:"Réservez votre séance de natation",bookingIntro:"Choisissez le format de votre séance et laissez vos coordonnées. Khadija pourra ensuite confirmer votre demande.",bookingFullName:"Nom complet",bookingFullNamePlaceholder:"Votre nom complet",bookingPhone:"Téléphone / WhatsApp",bookingPhonePlaceholder:"Votre numéro de téléphone",bookingType:"Type de séance",bookingChoose:"Choisissez un type de séance...",bookingIndividual:"Séance individuelle (1 on 1)",bookingTwo:"Séance pour deux personnes",bookingThree:"Séance pour 3 personnes",bookingFour:"Séance pour 4 personnes",bookingSubmit:"Confirmer la réservation",bookingChooseDay:"Choisissez un jour disponible",bookingSaturday:"Samedi",bookingSunday:"Dimanche",bookingChooseTime:"Horaires disponibles",bookingLoading:"Chargement des horaires…",bookingNoSlots:"Aucun horaire disponible pour ce jour.",bookingTaken:"Déjà réservé",bookingUnavailable:"Impossible de communiquer avec le système de réservation. Réessayez plus tard.",bookingSelectSlot:"Veuillez choisir un jour et un horaire.",bookingSending:"Envoi en cours…",bookingSuccess:"Votre demande de réservation a bien été envoyée à Khadija. Le créneau sera confirmé après vérification.",bookingSlotTaken:"Ce créneau vient d’être réservé. Veuillez en choisir un autre.",bookingNote:"Votre demande sera enregistrée dans Supabase. L’horaire demandé reste soumis à la confirmation de Khadija.",navContact:"Contact",
     eyebrow:"Coach de natation · Eau libre · Ultramarathon",
     heroText:"Du débutant au nageur confirmé, un coaching humain, précis et exigeant en piscine comme en eau libre, pour gagner en confiance, perfectionner sa technique et repousser ses limites.",
-    register:"S'inscrire",discover:"Découvrir son parcours",journeyKicker:"Votre prochaine étape commence ici",journeyTitle:"Prête à plonger dans une nouvelle aventure ?",journeyText:"Un premier clic peut ouvrir la voie à plus de confiance, de technique et de liberté dans l’eau.",journeyButton:"✦ Commencez votre parcours",journeyNote:"Simplement. À votre rythme. À votre niveau.",
-    stat5:"participations enregistrées",stat10:"participations enregistrées",stat20:"ultramarathons enregistrés",raceSummaryTitle:"Toutes les courses enregistrées",raceSummaryHint:"Appuyez pour découvrir les distances et participations",raceSummaryTotal:"participations",raceEntries:"participations enregistrées",raceUltra:"courses d’ultramarathon",
+    register:"Réservez",discover:"Découvrir son parcours",journeyKicker:"Votre prochaine étape commence ici",journeyTitle:"Prête à plonger dans une nouvelle aventure ?",journeyText:"Un premier clic peut ouvrir la voie à plus de confiance, de technique et de liberté dans l’eau.",journeyButton:"✦ Réservez",journeyNote:"Simplement. À votre rythme. À votre niveau.",
+    stat5:"participations enregistrées",stat10:"participations enregistrées",stat20:"ultramarathons enregistrés",raceSummaryTitle:"Quelques courses enregistrées",raceSummaryHint:"Appuyez pour découvrir les distances et participations",raceSummaryTotal:"participations",raceEntries:"participations enregistrées",raceUltra:"courses d’ultramarathon",
     approachKicker:"Mon approche",approachTitle:"Chaque nageur mérite une méthode qui lui ressemble.",
     approachIntro:"Du premier contact avec l'eau jusqu'à la préparation à la compétition, le coaching s'adapte au niveau, aux objectifs et au rythme de chacun.",
     confidence:"Confiance",confidenceText:"Construire une relation sereine avec l'eau et dépasser progressivement les peurs.",
@@ -748,21 +999,21 @@ const translations = {
     aboutKicker:"Qui suis-je ?",
     about1:"Je suis une athlète d'ultramarathon, coach et, avant tout, une personne qui a construit sa vie autour de l'eau.",
     about2:"J'ai grandi dans un club de natation, entre l'école, les entraînements et les étés passés au bord de la mer avec ma famille. L'océan n'a jamais été simplement un endroit où nager : il fait partie de mon histoire.",
-    about3:"Des années plus tard, j'ai retrouvé la natation à travers l'eau libre et l'ultramarathon. Cette aventure m'a appris la patience, la résilience, la discipline, la conscience de soi et le contrôle émotionnel.",
-    about4:"Pour moi, la natation est plus qu'un sport. C'est une forme de thérapie, une manière de se découvrir, de se dépasser et de devenir plus fort dans et hors de l'eau.",
-    about5:"Devenir coach a été la continuité naturelle de ce parcours. Aujourd'hui, mon objectif reste le même : aider chaque nageur à découvrir ce dont il est réellement capable.",
+    about3:"Des années plus tard, j'ai retrouvé la natation à travers l'eau libre et l'ultramarathon. Cette aventure m'a appris la patience, la résilience, la discipline, la conscience de soi et la gestion émotionnelle.",
+    about4:"Pour moi, la natation est plus qu'un sport. C'est une forme de thérapie, une manière de se découvrir, de se dépasser et de devenir plus fort dans et hors de l'eau. Elle m'a surtout appris à m'aimer, à mieux me connaître et à trouver en moi une force que je ne soupçonnais pas.",
+    about5:"Je suis profondément convaincue que la dimension psychologique est au cœur de la performance, même si elle est encore trop souvent négligée. L'état d'esprit, la confiance en soi et la maîtrise émotionnelle ne sont pas des éléments secondaires : ils sont indissociables de la technique et de la performance et conditionnent notre capacité à l'exprimer pleinement.",     about6:"Devenir coach a été la continuité naturelle de ce parcours. Aujourd'hui, ma mission est d'aider chaque personne à se découvrir à travers l'eau, à construire une force physique et mentale, et à réaliser que ses limites sont souvent bien plus loin qu'il ne l'imagine.",
     achKicker:"Parcours & réalisations",achTitle:"Un parcours construit dans l'eau, étape après étape.",
     achIntro:"Les réalisations sont volontairement cachées au départ pour garder une page élégante. Appuyez sur le bouton pour découvrir l'ensemble du parcours.",
     allAchievements:"＋ Voir tous les accomplissements",racesTitle:"🏊 Courses d'eau libre",racesCount:"11 participations",
     certTitle:"🎓 Certifications & documents",pressTitle:"📰 Presse & médias",
     ctaTitle:"Prête à aller plus loin dans l'eau ?",ctaText:"Que vous débutiez, cherchiez à progresser ou prépariez une compétition, le coaching commence par un premier échange.",
-    reviewsKicker:"Vos mots",reviewsTitle:"Ce que les nageurs disent de leur expérience.",reviewsIntro:"Chaque message est une petite trace du chemin parcouru ensemble.",reviewsPrivate:"Votre expérience compte",reviewsPrivateText:"Partagez quelques mots. Après validation, votre message pourra rejoindre cet espace.",leaveReview:"✦ Laisser mon avis",reviewEmptyTitle:"Votre message peut apparaître ici.",reviewEmptyText:"Le premier témoignage sera affiché dans cette collection avec élégance.",reviewFormKicker:"Votre expérience",reviewFormTitle:"Laissez un petit mot",reviewFormIntro:"Un message sincère, quelques lignes suffisent.",reviewName:"Votre prénom",reviewMessage:"Votre message",reviewRating:"Votre note",reviewSend:"Envoyer mon avis",reviewNote:"Pour protéger le site, les messages sont vérifiés avant leur publication.",reviewSuccess:"Merci. Votre message a bien été envoyé.",ctaButton:"Accéder au formulaire d'inscription",contactKicker:"Contact",contactTitle:"Parlons de votre prochain objectif."
+    reviewsKicker:"Vos mots",reviewsTitle:"Ce que les nageurs disent de leur expérience.",reviewsIntro:"Chaque message est une petite trace du chemin parcouru ensemble.",reviewsPrivate:"Votre expérience compte",reviewsPrivateText:"Partagez quelques mots : votre avis apparaîtra dès son enregistrement.",leaveReview:"✦ Laisser mon avis",reviewEmptyTitle:"Votre message peut apparaître ici.",reviewEmptyText:"Le premier témoignage sera affiché dans cette collection avec élégance.",reviewFormKicker:"Votre expérience",reviewFormTitle:"Laissez un petit mot",reviewFormIntro:"Un message sincère, quelques lignes suffisent.",reviewName:"Votre prénom",reviewMessage:"Votre message",reviewRating:"Votre note",reviewSend:"Envoyer mon avis",reviewNote:"Votre avis sera publié immédiatement après son enregistrement.",reviewSuccess:"Merci ! Votre avis est publié.",ctaButton:"Accéder au formulaire d'inscription",contactKicker:"Contact",contactTitle:"Parlons de votre prochain objectif."
   },
   en:{
-    navApproach:"My approach",navMethod:"My method",navAbout:"About me",navAchievements:"Achievements",navReviews:"Reviews",navContact:"Contact",
+    navApproach:"My approach",navMethod:"My method",navAbout:"About me",navAchievements:"Achievements",navReviews:"Reviews",navBooking:"Book",bookingPacksHeading:"Session packages",bookingPacksSummary:"15 sessions: Individual €1245 · Duo €900 · Trio €780 (valid for 6 months)\n10 sessions: Individual €830 · Duo €600 · Trio €520 (valid for 4 months)\nGroup of 4: 10 sessions €480 · 15 sessions €720",bookingPacksNote:"Validity begins on the selected start date. Pay in cash or by installments; confirm the payment schedule with Khadija.",bookingDirectHeading:"Single sessions · no package",bookingDirectSummary:"Individual €90 · Duo €65 · Trio €55 · Group of 4 €50 per session",bookingDirectNote:"Direct sessions are charged per session and do not include a package or validity period.",bookingPackagesOptgroup:"Session packages",bookingDirectOptgroup:"Direct single sessions",bookingPackage:"1. Choose your package",bookingChoosePackage:"Choose a package...",bookingPack15:"15 sessions — individual €1245 / duo €900 / trio €780 — valid for 6 months",bookingPack10:"10 sessions — individual €830 / duo €600 / trio €520 — valid for 4 months",bookingGroup4Pack10:"Group of 4 — 10 sessions — €480",bookingGroup4Pack15:"Group of 4 — 15 sessions — €720",bookingPayg:"Pay as you go — individual €90 / duo €65 / trio €55 / group of 4 €50",bookingPackageHint:"The price will update according to the selected package and session format.",bookingPaymentTerms:"Payment: cash or installments. Exact terms and the payment schedule must be confirmed with Khadija before confirmation.",bookingGroupFormation:"I confirm that all four participants have formed their own group.",bookingStartDate:"3. Choose a Saturday or Sunday",bookingWeekendNote:"Only Saturdays and Sundays can be selected.",bookingPriceLabel:"Selected price",bookingSelectTypeAfterPackage:"Choose a package first.",bookingChooseTime:"4. Choose your preferred time",bookingKicker:"Booking",bookingTitle:"Book a swimming session",bookingIntro:"Choose your session format and leave your contact details. Khadija can then confirm your request.",bookingFullName:"Full name",bookingFullNamePlaceholder:"Your full name",bookingPhone:"Phone / WhatsApp",bookingPhonePlaceholder:"Your phone number",bookingType:"Session type",bookingChoose:"Choose a session type...",bookingIndividual:"Private session (1 on 1)",bookingTwo:"Session for two people",bookingThree:"Session for 3 people",bookingFour:"Session for 4 people",bookingSubmit:"Confirm booking",bookingChooseDay:"Choose an available day",bookingSaturday:"Saturday",bookingSunday:"Sunday",bookingChooseTime:"Available time slots",bookingLoading:"Loading available times…",bookingNoSlots:"No available times for this day.",bookingTaken:"Already booked",bookingUnavailable:"Unable to connect to the booking system. Please try again later.",bookingSelectSlot:"Please choose a day and time.",bookingSending:"Sending…",bookingSuccess:"Your booking request has been sent to Khadija. The time will be confirmed after review.",bookingSlotTaken:"This time was just booked. Please choose another slot.",bookingNote:"Your request is saved in Supabase. The requested time remains subject to Khadija’s confirmation.",navContact:"Contact",
     eyebrow:"Swim Coach · Open Water · Ultramarathon",
     heroText:"A human, precise and demanding approach to help you swim better, build confidence and go further.",
-    register:"Register",discover:"Discover her journey",journeyKicker:"Your next step starts here",journeyTitle:"Ready to dive into a new adventure?",journeyText:"One small click can open the way to more confidence, better technique and freedom in the water.",journeyButton:"✦ Start your journey",journeyNote:"Simply. At your pace. At your level.",
+    register:"Book a session",discover:"Discover her journey",journeyKicker:"Your next step starts here",journeyTitle:"Ready to dive into a new adventure?",journeyText:"One small click can open the way to more confidence, better technique and freedom in the water.",journeyButton:"✦ Book a session",journeyNote:"Simply. At your pace. At your level.",
     stat5:"recorded participations",stat10:"recorded participations",stat20:"recorded ultramarathons",raceSummaryTitle:"All recorded races",raceSummaryHint:"Tap to explore distances and race entries",raceSummaryTotal:"participations",raceEntries:"recorded participations",raceUltra:"ultramarathon races",
     approachKicker:"My approach",approachTitle:"Every swimmer deserves an approach that fits them.",
     approachIntro:"From first contact with the water to competition preparation, coaching adapts to each swimmer's level, goals and pace.",
@@ -773,21 +1024,21 @@ const translations = {
     aboutKicker:"About me",
     about1:"I'm an ultramarathon athlete, coach and, above all, someone who has built her life around water.",
     about2:"I grew up in a swimming club, between school, training and summers by the sea with my family. The ocean was never simply a place to swim: it became part of who I am.",
-    about3:"Years later, I found my way back to swimming through open water and ultramarathon swimming. It taught me patience, resilience, discipline, self-awareness and emotional control.",
-    about4:"For me, swimming is more than a sport. It is a form of therapy, a way to discover yourself, challenge yourself and become stronger in and out of the water.",
-    about5:"Becoming a coach was a natural continuation of that journey. Today, my goal remains the same: to help every swimmer discover what they are truly capable of.",
+    about3:"Years later, I found my way back to swimming through open water and ultramarathon swimming. This journey taught me patience, resilience, discipline, self-awareness and emotional management.",
+    about4:"For me, swimming is more than a sport. It is a form of therapy, a way to discover yourself, challenge yourself and become stronger in and out of the water. Above all, it taught me to love myself, understand myself better and find within me a strength I never knew I had.",
+    about5:"I deeply believe that the psychological dimension lies at the heart of performance, even though it is still too often overlooked. Mindset, self-confidence and emotional control are not secondary elements: they are inseparable from technique and performance, and shape our ability to express our full potential.",     about6:"Becoming a coach was a natural continuation of this journey. Today, my mission is to help every person discover themselves through water, build physical and mental strength, and realize that their limits are often much farther away than they imagine.",
     achKicker:"Journey & achievements",achTitle:"A journey built in the water, one step at a time.",
     achIntro:"Achievements stay hidden at first to keep the page elegant. Press the button to discover the full journey.",
     allAchievements:"＋ View all achievements",racesTitle:"🏊 Open Water Races",racesCount:"11 participations",
     certTitle:"🎓 Certifications & documents",pressTitle:"📰 Press & media",
     ctaTitle:"Ready to go further in the water?",ctaText:"Whether you're starting out, improving or preparing for a competition, coaching begins with a first conversation.",
-    reviewsKicker:"Your words",reviewsTitle:"What swimmers say about their experience.",reviewsIntro:"Every message is a small trace of the journey shared together.",reviewsPrivate:"Your experience matters",reviewsPrivateText:"Share a few words. After review, your message can join this collection.",leaveReview:"✦ Leave a review",reviewEmptyTitle:"Your message could appear here.",reviewEmptyText:"The first testimonial will be displayed in this collection with care.",reviewFormKicker:"Your experience",reviewFormTitle:"Leave a little note",reviewFormIntro:"A sincere message is enough.",reviewName:"Your first name",reviewMessage:"Your message",reviewRating:"Your rating",reviewSend:"Send my review",reviewNote:"To protect the site, messages are checked before publication.",reviewSuccess:"Thank you. Your message has been sent.",ctaButton:"Open registration form",contactKicker:"Contact",contactTitle:"Let's talk about your next goal."
+    reviewsKicker:"Your words",reviewsTitle:"What swimmers say about their experience.",reviewsIntro:"Every message is a small trace of the journey shared together.",reviewsPrivate:"Your experience matters",reviewsPrivateText:"Share a few words: your review appears as soon as it is saved.",leaveReview:"✦ Leave a review",reviewEmptyTitle:"Your message could appear here.",reviewEmptyText:"The first testimonial will be displayed in this collection with care.",reviewFormKicker:"Your experience",reviewFormTitle:"Leave a little note",reviewFormIntro:"A sincere message is enough.",reviewName:"Your first name",reviewMessage:"Your message",reviewRating:"Your rating",reviewSend:"Send my review",reviewNote:"Your review will appear immediately after it is saved.",reviewSuccess:"Thank you! Your review is now published.",ctaButton:"Open registration form",contactKicker:"Contact",contactTitle:"Let's talk about your next goal."
   },
   ar:{
-    navApproach:"منهجي",navMethod:"طريقتي",navAbout:"من أنا؟",navAchievements:"الإنجازات",navReviews:"آراء العملاء",navContact:"تواصل",
-    eyebrow:"مدربة سباحة · مياه مفتوحة · ألترا ماراثون",journeyKicker:"خطوتك القادمة تبدأ من هنا",journeyTitle:"هل أنت مستعدة لبدء رحلة جديدة؟",journeyText:"ضغطة واحدة قد تكون بداية ثقة أكبر وتقنية أفضل وحرية أكثر في الماء.",journeyButton:"✦ ابدئي رحلتك الآن",journeyNote:"ببساطة، وبإيقاعك، وبما يناسب مستواك.",
+    navApproach:"منهجي",navMethod:"طريقتي",navAbout:"من أنا؟",navAchievements:"الإنجازات",navReviews:"آراء العملاء",navBooking:"حجز حصة",bookingPacksHeading:"باقات الحصص",bookingPacksSummary:"15 حصة: فردي 1245€ · ثنائي 900€ · ثلاثي 780€ (الصلاحية 6 أشهر)\n10 حصص: فردي 830€ · ثنائي 600€ · ثلاثي 520€ (الصلاحية 4 أشهر)\nمجموعة من 4 أشخاص: 10 حصص 480€ · 15 حصة 720€",bookingPacksNote:"تبدأ صلاحية الباقة من تاريخ البدء الذي تختاره. الدفع نقداً أو بالتقسيط، ويجب تأكيد جدول الأقساط مع خديجة.",bookingDirectHeading:"حصص مباشرة · بدون باقة",bookingDirectSummary:"فردي 90€ · ثنائي 65€ · ثلاثي 55€ · رباعي 50€ للحصة الواحدة",bookingDirectNote:"تُحاسب الحصص المباشرة لكل حصة على حدة، ولا تشمل باقة أو مدة صلاحية.",bookingPackagesOptgroup:"باقات الحصص",bookingDirectOptgroup:"الحصص المباشرة",bookingPackage:"1. اختر الباقة أولاً",bookingChoosePackage:"اختر الباقة...",bookingPack15:"15 حصة — فردي 1245€ / ثنائي 900€ / ثلاثي 780€ — صالحة 6 أشهر",bookingPack10:"10 حصص — فردي 830€ / ثنائي 600€ / ثلاثي 520€ — صالحة 4 أشهر",bookingGroup4Pack10:"مجموعة من 4 أشخاص — 10 حصص — 480€",bookingGroup4Pack15:"مجموعة من 4 أشخاص — 15 حصة — 720€",bookingPayg:"حصة مباشرة — فردي 90€ / ثنائي 65€ / ثلاثي 55€ / رباعي 50€",bookingPackageHint:"سيظهر السعر حسب الباقة ونوع الحصة الذي تختاره.",bookingPaymentTerms:"الدفع نقداً أو بالتقسيط. يجب تأكيد تفاصيل التقسيط ومواعيده مع خديجة قبل اعتماد الحجز.",bookingGroupFormation:"أؤكد أن المشاركين الأربعة كوّنوا مجموعتهم بأنفسهم.",bookingStartDate:"3. اختر يوم السبت أو الأحد",bookingWeekendNote:"يمكن اختيار يوم السبت أو الأحد فقط.",bookingPriceLabel:"السعر المختار",bookingSelectTypeAfterPackage:"يرجى اختيار الباقة أولاً.",bookingChooseTime:"4. اختر الوقت الذي تفضله",bookingKicker:"الحجز",bookingTitle:"احجز حصتك في السباحة",bookingIntro:"اختر نوع الحصة وأدخل بيانات التواصل، وستتمكن خديجة من تأكيد طلبك لاحقًا.",bookingFullName:"الاسم الكامل",bookingFullNamePlaceholder:"أدخل اسمك الكامل",bookingPhone:"رقم الهاتف / واتساب",bookingPhonePlaceholder:"أدخل رقم هاتفك",bookingType:"نوع الحصة",bookingChoose:"اختر نوع الحصة...",bookingIndividual:"حصة فردية (1 on 1)",bookingTwo:"حصة لشخصين",bookingThree:"حصة لـ 3 أشخاص",bookingFour:"حصة لـ 4 أشخاص",bookingSubmit:"تأكيد الحجز",bookingChooseDay:"اختر اليوم المناسب",bookingSaturday:"السبت",bookingSunday:"الأحد",bookingChooseTime:"المواعيد المتاحة",bookingLoading:"جارٍ تحميل المواعيد…",bookingNoSlots:"لا توجد مواعيد متاحة في هذا اليوم.",bookingTaken:"محجوز مسبقًا",bookingUnavailable:"تعذر الاتصال بنظام الحجز. حاول مرة أخرى لاحقًا.",bookingSelectSlot:"يرجى اختيار اليوم والموعد.",bookingSending:"جارٍ إرسال الحجز…",bookingSuccess:"تم إرسال طلب حجزك بنجاح إلى خديجة. سيتم تأكيد الموعد بعد مراجعته.",bookingSlotTaken:"تم حجز هذا الموعد للتو. يرجى اختيار موعد آخر.",bookingNote:"سيُحفظ طلبك في قاعدة البيانات، ويظل الموعد المطلوب خاضعًا لتأكيد خديجة.",navContact:"تواصل",
+    eyebrow:"مدربة سباحة · مياه مفتوحة · ألترا ماراثون",journeyKicker:"خطوتك القادمة تبدأ من هنا",journeyTitle:"هل أنت مستعدة لبدء رحلة جديدة؟",journeyText:"ضغطة واحدة قد تكون بداية ثقة أكبر وتقنية أفضل وحرية أكثر في الماء.",journeyButton:"✦ احجز حصتك",journeyNote:"ببساطة، وبإيقاعك، وبما يناسب مستواك.",
     heroText:"منهج إنساني ودقيق ومتطلب يساعد السباح على تحسين مستواه وبناء الثقة والوصول إلى أبعد.",
-    register:"التسجيل",discover:"اكتشف مسيرتها",
+    register:"احجز حصتك",discover:"اكتشف مسيرتها",
     stat5:"مشاركات مسجلة",stat10:"مشاركات مسجلة",stat20:"سباقات ألترا ماراثون مسجلة",raceSummaryTitle:"جميع السباقات المسجلة",raceSummaryHint:"اضغط لاكتشاف المسافات وعدد المشاركات",raceSummaryTotal:"مشاركة",raceEntries:"مشاركات مسجلة",raceUltra:"سباقات ألترا ماراثون",
     approachKicker:"منهجي",approachTitle:"كل سباح يستحق أسلوبًا يناسبه.",
     approachIntro:"من أول خطوة في الماء إلى التحضير للمنافسات، يتكيف التدريب مع مستوى السباح وأهدافه وإيقاعه.",
@@ -798,20 +1049,35 @@ const translations = {
     aboutKicker:"من أنا؟",
     about1:"أنا رياضية ألترا ماراثون ومدربة، وقبل كل شيء إنسانة بنت حياتها حول الماء.",
     about2:"نشأت في نادٍ للسباحة، بين الدراسة والتدريب والصيف الذي كنت أقضيه قرب البحر مع عائلتي. المحيط لم يكن مجرد مكان للسباحة، بل أصبح جزءًا من قصتي.",
-    about3:"بعد سنوات، عدت إلى السباحة من خلال المياه المفتوحة وسباقات الألترا ماراثون. علّمتني هذه الرحلة الصبر والصمود والانضباط والوعي بالذات والتحكم العاطفي.",
-    about4:"بالنسبة لي السباحة أكثر من رياضة. إنها وسيلة لاكتشاف الذات وتحديها والنمو داخل الماء وخارجه.",
-    about5:"أصبحت مدربة كامتداد طبيعي لهذه الرحلة. واليوم ما زال هدفي واحدًا: مساعدة كل سباح على اكتشاف ما يستطيع فعله حقًا.",
+    about3:"بعد سنوات، عدت إلى السباحة من خلال المياه المفتوحة وسباقات الألترا ماراثون. علّمتني هذه الرحلة الصبر والصمود والانضباط والوعي بالذات وإدارة المشاعر.",
+    about4:"بالنسبة لي السباحة أكثر من رياضة. إنها شكل من أشكال العلاج، وطريقة لاكتشاف الذات وتحديها والنمو داخل الماء وخارجه. والأهم أنها علمتني أن أحب نفسي، وأن أفهمها أكثر، وأن أكتشف في داخلي قوة لم أكن أعلم بوجودها.",
+    about5:"أؤمن بعمق أن الجانب النفسي يقع في قلب الأداء الرياضي، رغم أنه لا يزال مهمَلًا في كثير من الأحيان. فالعقلية والثقة بالنفس والتحكم بالمشاعر ليست عناصر ثانوية، بل ترتبط ارتباطًا وثيقًا بالتقنية والأداء، وتحدد قدرتنا على إظهار كامل إمكاناتنا.",     about6:"كان التحول إلى التدريب امتدادًا طبيعيًا لهذه الرحلة. واليوم تتمثل رسالتي في مساعدة كل شخص على اكتشاف ذاته من خلال الماء، وبناء قوة جسدية وذهنية، وإدراك أن حدوده غالبًا أبعد بكثير مما يتخيل.",
     achKicker:"المسيرة والإنجازات",achTitle:"مسيرة بُنيت في الماء، خطوة بعد خطوة.",
     achIntro:"أخفيت الإنجازات في البداية حتى تبقى الصفحة أنيقة. اضغط على الزر لاكتشاف المسيرة كاملة.",
     allAchievements:"＋ عرض جميع الإنجازات",racesTitle:"🏊 سباقات المياه المفتوحة",racesCount:"11 مشاركة",
     certTitle:"🎓 الشهادات والوثائق",pressTitle:"📰 الصحافة والإعلام",
     ctaTitle:"هل أنت مستعدة للذهاب أبعد في الماء؟",ctaText:"سواء كنت مبتدئًا أو تريد التطور أو تستعد لمنافسة، يبدأ التدريب بحوار أول.",
-    reviewsKicker:"كلماتكم",reviewsTitle:"ماذا يقول السباحون عن تجربتهم؟",reviewsIntro:"كل رسالة هي أثر جميل من رحلة مشتركة.",reviewsPrivate:"تجربتك تهمنا",reviewsPrivateText:"اكتب بضعة أسطر. بعد المراجعة، يمكن أن تظهر رسالتك في هذا القسم.",leaveReview:"✦ اترك رأيك",reviewEmptyTitle:"يمكن أن تظهر رسالتك هنا.",reviewEmptyText:"سيظهر أول رأي في هذه المجموعة بطريقة أنيقة.",reviewFormKicker:"تجربتك",reviewFormTitle:"اكتب لنا كلمة جميلة",reviewFormIntro:"رسالة صادقة وبضع كلمات تكفي.",reviewName:"اسمك الأول",reviewMessage:"رأيك",reviewRating:"تقييمك",reviewSend:"إرسال رأيي",reviewNote:"لحماية الموقع، تتم مراجعة الرسائل قبل نشرها.",reviewSuccess:"شكرًا لك. تم إرسال رسالتك.",ctaButton:"فتح نموذج التسجيل",contactKicker:"تواصل",contactTitle:"لنتحدث عن هدفك القادم."
+    reviewsKicker:"كلماتكم",reviewsTitle:"ماذا يقول السباحون عن تجربتهم؟",reviewsIntro:"كل رسالة هي أثر جميل من رحلة مشتركة.",reviewsPrivate:"تجربتك تهمنا",reviewsPrivateText:"اكتب رأيك وسيظهر مباشرة بعد حفظه.",leaveReview:"✦ اترك رأيك",reviewEmptyTitle:"يمكن أن تظهر رسالتك هنا.",reviewEmptyText:"سيظهر أول رأي في هذه المجموعة بطريقة أنيقة.",reviewFormKicker:"تجربتك",reviewFormTitle:"اكتب لنا كلمة جميلة",reviewFormIntro:"رسالة صادقة وبضع كلمات تكفي.",reviewName:"اسمك الأول",reviewMessage:"رأيك",reviewRating:"تقييمك",reviewSend:"إرسال رأيي",reviewNote:"سيظهر رأيك مباشرة بعد إرساله وحفظه.",reviewSuccess:"شكرًا لك! تم نشر رأيك مباشرة.",ctaButton:"فتح نموذج التسجيل",contactKicker:"تواصل",contactTitle:"لنتحدث عن هدفك القادم."
   }
 };
 
+// Supabase project connection: project URL and public publishable key.
 const SUPABASE_URL = "https://klzbgjmnbakbarargnkv.supabase.co";
 const SUPABASE_KEY = "sb_publishable_LUMZNqV6IV2T1vWyyjgdzw_ALRfh9to";
+
+// Initialize one shared Supabase JS v2 client for bookings and reviews.
+const supabaseClient = (() => {
+  if (!window.supabase || typeof window.supabase.createClient !== "function") {
+    console.error("Supabase JS v2 did not load. Check the CDN connection.");
+    return null;
+  }
+  try {
+    return window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  } catch (error) {
+    console.error("Supabase client initialization failed:", error);
+    return null;
+  }
+})();
 
 const reviewFormWrap = document.getElementById("reviewFormWrap");
 const reviewFormToggle = document.getElementById("reviewFormToggle");
@@ -822,6 +1088,12 @@ const reviewSubmit = document.getElementById("reviewSubmit");
 
 function reviewText(key){
   const lang = document.documentElement.lang || "fr";
+  const extra = {
+    reviewSending:{ar:"جارٍ حفظ رأيك…",en:"Saving your review…",fr:"Enregistrement de votre avis…"},
+    reviewError:{ar:"تعذر حفظ رأيك. تحقق من اتصالك أو صلاحيات جدول reviews ثم حاول مجددًا.",en:"Could not save your review. Check your connection and the reviews table permissions, then try again.",fr:"Impossible d’enregistrer votre avis. Vérifiez la connexion et les autorisations de la table reviews."},
+    supabaseInitError:{ar:"تعذر تشغيل اتصال Supabase. أعد تحميل الصفحة وحاول مجددًا.",en:"Supabase could not initialize. Reload the page and try again.",fr:"Impossible d’initialiser Supabase. Rechargez la page et réessayez."}
+  };
+  if(extra[key]) return extra[key][lang] || extra[key].fr;
   const dict = translations[lang] || translations.fr;
   return dict[key] || translations.fr[key] || "";
 }
@@ -835,51 +1107,111 @@ function reviewInitials(name){
   return (parts.slice(0,2).map(p=>p.charAt(0).toUpperCase()).join("") || "♡");
 }
 
+let activeReviewIndex = 0;
+let reviewTouchStartX = 0;
+
+function updateReviewCarousel(){
+  const track = reviewList.querySelector('.reviews-track');
+  if(!track) return;
+  const total = track.children.length;
+  activeReviewIndex = Math.max(0, Math.min(activeReviewIndex, total - 1));
+  track.style.transform = `translateX(-${activeReviewIndex * 100}%)`;
+  reviewList.querySelectorAll('.review-dot').forEach((dot, index)=>{
+    dot.classList.toggle('active', index === activeReviewIndex);
+    dot.setAttribute('aria-current', index === activeReviewIndex ? 'true' : 'false');
+  });
+  const count = reviewList.querySelector('.review-count');
+  if(count) count.textContent = `${activeReviewIndex + 1} / ${total}`;
+  const prev = reviewList.querySelector('[data-review-prev]');
+  const next = reviewList.querySelector('[data-review-next]');
+  if(prev) prev.disabled = total < 2;
+  if(next) next.disabled = total < 2;
+}
+
+function moveReviewCarousel(step){
+  const track = reviewList.querySelector('.reviews-track');
+  if(!track || track.children.length < 2) return;
+  activeReviewIndex = (activeReviewIndex + step + track.children.length) % track.children.length;
+  updateReviewCarousel();
+}
+
 function renderReviews(data){
   if(!Array.isArray(data) || data.length === 0){
     reviewList.innerHTML = `<div class="review-empty"><div class="review-empty-icon">♡</div><h3>${escapeReviewText(reviewText("reviewEmptyTitle"))}</h3><p>${escapeReviewText(reviewText("reviewEmptyText"))}</p></div>`;
     return;
   }
 
-  reviewList.innerHTML = "";
-  data.forEach(r => {
-    const card = document.createElement("article");
-    card.className = "review-card";
+  activeReviewIndex = 0;
+  reviewList.innerHTML = `<div class="reviews-viewport" aria-label="${document.documentElement.lang === 'ar' ? 'آراء السباحين' : document.documentElement.lang === 'en' ? 'Swimmer reviews' : 'Avis des nageurs'}"><div class="reviews-track"></div></div><div class="review-controls"><button class="review-arrow" type="button" data-review-prev aria-label="${document.documentElement.lang === 'ar' ? 'التعليق السابق' : document.documentElement.lang === 'en' ? 'Previous review' : 'Avis précédent'}">‹</button><div class="review-dots" aria-label="${document.documentElement.lang === 'ar' ? 'اختر تعليقًا' : document.documentElement.lang === 'en' ? 'Choose a review' : 'Choisir un avis'}"></div><span class="review-count" aria-live="polite"></span><button class="review-arrow" type="button" data-review-next aria-label="${document.documentElement.lang === 'ar' ? 'التعليق التالي' : document.documentElement.lang === 'en' ? 'Next review' : 'Avis suivant'}">›</button></div>`;
 
-    const meta = document.createElement("div");
-    meta.className = "review-meta";
-    const avatar = document.createElement("div");
-    avatar.className = "review-avatar";
+  const track = reviewList.querySelector('.reviews-track');
+  const dots = reviewList.querySelector('.review-dots');
+  data.forEach((r, index) => {
+    const slide = document.createElement('div');
+    slide.className = 'review-slide';
+    slide.setAttribute('role','group');
+    slide.setAttribute('aria-roledescription','slide');
+    slide.setAttribute('aria-label', `${index + 1} / ${data.length}`);
+
+    const card = document.createElement('article');
+    card.className = 'review-card';
+    card.dir = document.documentElement.lang === 'ar' ? 'rtl' : 'ltr';
+
+    const meta = document.createElement('div');
+    meta.className = 'review-meta';
+    const avatar = document.createElement('div');
+    avatar.className = 'review-avatar';
     avatar.textContent = reviewInitials(r.name);
-    const from = document.createElement("div");
-    from.className = "review-from";
-    const fromStrong = document.createElement("strong");
-    fromStrong.textContent = r.name || "Anonymous";
-    const fromText = document.createElement("span");
-    fromText.textContent = document.documentElement.lang === "ar" ? "هذه الرسالة من" : document.documentElement.lang === "en" ? "A message from" : "Ce message est de";
-    from.prepend(fromStrong);
-    from.appendChild(fromText);
+    const from = document.createElement('div');
+    from.className = 'review-from';
+    const fromStrong = document.createElement('strong');
+    fromStrong.textContent = r.name || 'Anonymous';
+    const fromText = document.createElement('span');
+    fromText.textContent = document.documentElement.lang === 'ar' ? 'هذه الرسالة من' : document.documentElement.lang === 'en' ? 'A message from' : 'Ce message est de';
+    from.append(fromStrong, fromText);
     meta.append(avatar, from);
 
-    const rating = document.createElement("div");
-    rating.className = "review-rating";
-    rating.textContent = "★★★★★";
+    const rating = document.createElement('div');
+    rating.className = 'review-rating';
+    rating.textContent = '★★★★★';
 
-    const message = document.createElement("div");
-    message.className = "review-message";
-    message.textContent = `“${r.comment || ""}”`;
+    const message = document.createElement('div');
+    message.className = 'review-message';
+    message.textContent = `“${r.comment || ''}”`;
 
     card.append(meta, rating, message);
     if(r.created_at){
-      const date = document.createElement("div");
-      date.className = "review-date";
-      try{ date.textContent = new Date(r.created_at).toLocaleDateString(document.documentElement.lang || "fr-FR", {year:"numeric",month:"long",day:"numeric"}); }catch(e){ date.textContent = ""; }
+      const date = document.createElement('div');
+      date.className = 'review-date';
+      try{ date.textContent = new Date(r.created_at).toLocaleDateString(document.documentElement.lang || 'fr-FR', {year:'numeric',month:'long',day:'numeric'}); }catch(e){ date.textContent = ''; }
       card.appendChild(date);
     }
-    reviewList.appendChild(card);
-  });
-}
+    slide.appendChild(card);
+    track.appendChild(slide);
 
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'review-dot' + (index === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `${document.documentElement.lang === 'ar' ? 'التعليق' : document.documentElement.lang === 'en' ? 'Review' : 'Avis'} ${index + 1}`);
+    dot.addEventListener('click', ()=>{ activeReviewIndex = index; updateReviewCarousel(); });
+    dots.appendChild(dot);
+  });
+
+  reviewList.querySelector('[data-review-prev]').addEventListener('click', ()=>moveReviewCarousel(-1));
+  reviewList.querySelector('[data-review-next]').addEventListener('click', ()=>moveReviewCarousel(1));
+  const viewport = reviewList.querySelector('.reviews-viewport');
+  viewport.addEventListener('touchstart', event=>{ reviewTouchStartX = event.changedTouches[0].clientX; }, {passive:true});
+  viewport.addEventListener('touchend', event=>{
+    const delta = event.changedTouches[0].clientX - reviewTouchStartX;
+    if(Math.abs(delta) > 45) moveReviewCarousel(delta < 0 ? 1 : -1);
+  }, {passive:true});
+  viewport.addEventListener('keydown', event=>{
+    if(event.key === 'ArrowRight'){ event.preventDefault(); moveReviewCarousel(1); }
+    if(event.key === 'ArrowLeft'){ event.preventDefault(); moveReviewCarousel(-1); }
+  });
+  viewport.tabIndex = 0;
+  updateReviewCarousel();
+}
 async function fetchReviewsSupabase(){
   try{
     const res = await fetch(`${SUPABASE_URL}/rest/v1/reviews?status=eq.approved&select=*`, {
@@ -905,24 +1237,28 @@ reviewForm.addEventListener("submit", async (event)=>{
   const name = document.getElementById("reviewerName").value.trim();
   const comment = document.getElementById("reviewerComment").value.trim();
   if(!name || !comment) return;
-
+  if(!supabaseClient){
+    reviewMsg.hidden=false;
+    reviewMsg.textContent = reviewText("supabaseInitError");
+    return;
+  }
   reviewSubmit.disabled = true;
   reviewSubmit.style.opacity = ".7";
   reviewMsg.hidden = false;
-  reviewMsg.textContent = document.documentElement.lang === "ar" ? "جارٍ إرسال رأيك…" : document.documentElement.lang === "en" ? "Sending your review…" : "Envoi de votre message…";
-
+  reviewMsg.textContent = reviewText("reviewSending");
   try{
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/reviews`, {
-      method:"POST",
-      headers:{"apikey":SUPABASE_KEY,"Authorization":`Bearer ${SUPABASE_KEY}`,"Content-Type":"application/json","Prefer":"return=minimal"},
-      body:JSON.stringify({name,comment,status:"pending"})
-    });
-    if(!res.ok) throw new Error(await res.text());
+    const newReview = {name, comment, status:"approved", created_at:new Date().toISOString()};
+    const {error} = await supabaseClient.from("reviews").insert(newReview);
+    if(error) throw error;
+    const current = Array.isArray(window.__approvedReviews) ? window.__approvedReviews : [];
+    window.__approvedReviews = [newReview, ...current];
+    renderReviews(window.__approvedReviews);
     reviewMsg.textContent = reviewText("reviewSuccess");
     reviewForm.reset();
   }catch(error){
-    reviewMsg.textContent = document.documentElement.lang === "ar" ? "حدث خطأ. حاول مرة أخرى." : document.documentElement.lang === "en" ? "Something went wrong. Please try again." : "Une erreur est survenue. Veuillez réessayer.";
     console.error("Review submission error:", error);
+    const detail = error?.message || error?.details || "";
+    reviewMsg.textContent = `${reviewText("reviewError")} ${detail}`.trim();
   }finally{
     reviewSubmit.disabled = false;
     reviewSubmit.style.opacity = "1";
@@ -990,17 +1326,213 @@ function setLanguage(lang){
   const dict=translations[lang]||translations.fr;
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     const key=el.getAttribute("data-i18n");
-    if(dict[key]) el.textContent=dict[key];
+    if(dict[key]){
+      if(el.tagName==="OPTGROUP") el.label=dict[key];
+      else el.textContent=dict[key];
+    }
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+    const key=el.getAttribute("data-i18n-placeholder");
+    if(dict[key]) el.placeholder=dict[key];
   });
   document.querySelectorAll(".langs button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
   document.documentElement.lang=lang;
   document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+  if(typeof renderBookingChoiceCards==="function") renderBookingChoiceCards();
+  if(typeof renderWeekendCalendar==="function") renderWeekendCalendar();
   if(window.__approvedReviews) renderReviews(window.__approvedReviews);
 }
 document.querySelectorAll(".langs button").forEach(btn=>{
   btn.addEventListener("click",()=>setLanguage(btn.dataset.lang));
 });
 
+// Package-first booking flow. Supabase v2 RPCs persist the complete booking record.
+const bookingForm = document.getElementById("bookingForm");
+const bookingMsg = document.getElementById("bookingMsg");
+const bookingSubmit = document.getElementById("bookingSubmit");
+// Reuse the shared Supabase client for all booking RPC calls.
+const bookingSupabase = supabaseClient;
+const packageSelect = document.getElementById("packageSelect");
+const packageDetails = document.getElementById("packageDetails");
+const sessionSelection = document.getElementById("sessionSelection");
+const sessionTypeSelect = document.getElementById("sessionType");
+packageSelect.required=false;sessionTypeSelect.required=false;
+const groupFormationWrap = document.getElementById("groupFormationWrap");
+const groupFormation = document.getElementById("groupFormation");
+const selectedPrice = document.getElementById("selectedPrice");
+const dateSelection = document.getElementById("dateSelection");
+const startDateInput = document.getElementById("startDate");
+const timeSelection = document.getElementById("timeSelection");
+const slotsContainer = document.getElementById("slotsContainer");
+const selectedDayInput = document.getElementById("selectedDay");
+const selectedTimeInput = document.getElementById("selectedTime");
+const bookingSlots = ["09:00 - 10:00","10:00 - 11:00","11:00 - 12:00","12:00 - 13:00","13:00 - 14:00","14:00 - 15:00","15:00 - 16:00","16:00 - 17:00"];
+let bookingSlotsRequest = 0;
+let bookingInFlight = false;
+const bookingCardI18n = {
+  fr:{step1:"1. Choisissez votre formule",step2:"2. Choisissez le type de séance",pack15:"Forfait 15 séances",pack10:"Forfait 10 séances",payg:"Séance à l’unité",valid6:"Valable 6 mois · paiement possible en 2 à 3 fois",valid4:"Valable 4 mois · paiement possible en 2 fois",direct:"Sans forfait · paiement par séance",individual:"Individuel",group2:"Duo",group3:"Trio",group4:"Groupe de 4 personnes",groupNote:"Pour le groupe de 4, les quatre participants doivent avoir constitué leur groupe eux-mêmes et le confirmer avant l’envoi de la demande.",groupJoin:"Je confirme que les quatre participants ont constitué leur propre groupe.",groupRequired:"Veuillez confirmer que les quatre participants ont constitué leur groupe avant de continuer.",remaining:"places restantes",full:"Complet",weekendOnly:"Choisissez uniquement un samedi ou un dimanche.",total:"Prix total sélectionné",choose:"Sélectionnez une formule pour afficher les types de séance.",weekdays:["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"],months:["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"]},
+  en:{step1:"1. Choose your session plan",step2:"2. Choose session type",pack15:"15-session package",pack10:"10-session package",payg:"Single session",valid6:"Valid for 6 months · split payment in 2–3 instalments",valid4:"Valid for 4 months · split payment in 2 instalments",direct:"No package · pay per session",individual:"Individual",group2:"Duo",group3:"Trio",group4:"Group of 4 people",groupNote:"For a group of 4, all four participants must have formed their own group and confirm this before submitting the request.",groupJoin:"I confirm that all four participants have formed their own group.",groupRequired:"Please confirm that all four participants have formed their group before continuing.",remaining:"seats left",full:"Full",weekendOnly:"Please choose a Saturday or Sunday only.",total:"Selected total price",choose:"Choose a plan to display the session types.",weekdays:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],months:["January","February","March","April","May","June","July","August","September","October","November","December"]},
+  ar:{step1:"1. اختر نظام الحصص",step2:"2. اختر نوع الحصة",pack15:"باقة 15 حصة",pack10:"باقة 10 حصص",payg:"حصة واحدة مباشرة",valid6:"صالحة لمدة 6 أشهر · إمكانية التقسيط على 2–3 دفعات",valid4:"صالحة لمدة 4 أشهر · إمكانية التقسيط على دفعتين",direct:"بدون باقة · الدفع لكل جلسة",individual:"فردي",group2:"ثنائي",group3:"ثلاثي",group4:"مجموعة 4 أشخاص",groupNote:"في خيار الأربعة، يجب أن يكون المشاركون الأربعة قد كوّنوا مجموعتهم بأنفسهم، مع تأكيد ذلك قبل إرسال الطلب.",groupJoin:"أؤكد أن المشاركين الأربعة كوّنوا مجموعتهم بأنفسهم.",groupRequired:"يرجى تأكيد أن المشاركين الأربعة كوّنوا مجموعتهم قبل المتابعة.",remaining:"مقاعد متبقية",full:"اكتمل العدد",weekendOnly:"يرجى اختيار يوم السبت أو الأحد فقط.",total:"السعر الإجمالي المختار",choose:"اختر نظام الحصص لعرض أنواع الحصص المتاحة.",weekdays:["الإثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت","الأحد"],months:["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"]}
+};
+function bookingCardText(key){const lang=document.documentElement.lang||"fr";return (bookingCardI18n[lang]||bookingCardI18n.fr)[key]||key;}
+function renderBookingChoiceCards(){
+  const packageGrid=document.getElementById("packageChoiceCards"),typeGrid=document.getElementById("sessionTypeCards");if(!packageGrid||!typeGrid)return;
+  const currentPackage=packageSelect.value,currentType=sessionTypeSelect.value;
+  const plans=[{code:"pack15",title:"pack15",meta:"valid6"},{code:"pack10",title:"pack10",meta:"valid4"},{code:"payg",title:"payg",meta:"direct"}];packageGrid.innerHTML="";
+  plans.forEach(plan=>{const button=document.createElement("button");button.type="button";button.className="booking-interactive-card package-card"+(currentPackage===plan.code?" is-selected":"");button.setAttribute("aria-pressed",String(currentPackage===plan.code));button.innerHTML='<span class="choice-check" aria-hidden="true">✓</span><span class="choice-title"></span><span class="choice-meta"></span>';button.querySelector(".choice-title").textContent=bookingCardText(plan.title);button.querySelector(".choice-meta").textContent=bookingCardText(plan.meta);button.addEventListener("click",()=>{packageSelect.value=plan.code;packageSelect.dispatchEvent(new Event("change",{bubbles:true}));});packageGrid.appendChild(button);});
+  const pkg=packageCatalog[currentPackage];typeGrid.innerHTML="";if(pkg){Object.keys(pkg.prices).forEach(type=>{const button=document.createElement("button");button.type="button";button.className="booking-interactive-card type-card"+(currentType===type?" is-selected":"");button.setAttribute("aria-pressed",String(currentType===type));button.innerHTML='<span class="choice-check" aria-hidden="true">✓</span><span class="choice-title"></span><span class="choice-price"></span>';button.querySelector(".choice-title").textContent=bookingCardText(type);button.querySelector(".choice-price").textContent=formatBookingPrice(pkg.prices[type]);button.addEventListener("click",()=>{sessionTypeSelect.value=type;sessionTypeSelect.dispatchEvent(new Event("change",{bubbles:true}));});typeGrid.appendChild(button);});}
+  let note=document.getElementById("bookingCardGroupNote");if(!note){note=document.createElement("p");note.id="bookingCardGroupNote";note.className="booking-card-note";typeGrid.insertAdjacentElement("afterend",note);}note.textContent=bookingCardText("groupNote");
+  let total=document.getElementById("bookingCardTotal");if(!total){total=document.createElement("p");total.id="bookingCardTotal";total.className="booking-total-price";total.setAttribute("aria-live","polite");note.insertAdjacentElement("afterend",total);}if(pkg&&currentType&&pkg.prices[currentType]!==undefined){total.hidden=false;total.textContent=bookingCardText("total")+": ";const strong=document.createElement("strong");strong.textContent=formatBookingPrice(pkg.prices[currentType]);total.appendChild(strong);}else{total.hidden=true;total.textContent="";}
+  const groupLabel=groupFormation?.nextElementSibling;if(groupLabel)groupLabel.textContent=bookingCardText("groupJoin");
+}
+const packageCatalog = {
+  pack15:{sessions:15,months:6,prices:{individual:1245,group2:900,group3:780,group4:720}},
+  pack10:{sessions:10,months:4,prices:{individual:830,group2:600,group3:520,group4:480}},
+  payg:{sessions:1,months:null,prices:{individual:90,group2:65,group3:55,group4:50}}
+};
+function bookingText(key){const lang=document.documentElement.lang||"fr";const dict=translations[lang]||translations.fr;return dict[key]||translations.fr[key]||"";}
+function formatBookingPrice(value){return `${Number(value).toLocaleString(undefined,{maximumFractionDigits:2})} €`;}
+function setBookingMessage(message,isError=false){if(!bookingMsg)return;bookingMsg.textContent=message;bookingMsg.hidden=false;bookingMsg.classList.toggle("error",isError);}
+function resetBookingAvailability(){selectedDayInput.value="";selectedTimeInput.value="";timeSelection.hidden=true;slotsContainer.innerHTML="";bookingSubmit.disabled=true;}
+function isWeekendDate(value){if(!value)return false;const d=new Date(value+"T12:00:00");return d.getDay()===0||d.getDay()===6;}
+function setMinimumStartDate(){const now=new Date();const localDate=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);startDateInput.min=localDate;}
+function updateBookingSubmit(){
+  // Keep the submit action available once the actual booking fields are selected.
+  // The group-of-four acknowledgement is validated on submit with an explicit message.
+  const ready=Boolean(packageSelect.value&&sessionTypeSelect.value&&startDateInput.value&&isWeekendDate(startDateInput.value)&&selectedTimeInput.value);
+  bookingSubmit.disabled=!ready||bookingInFlight;
+}
+function updatePackageDetails(){const code=packageSelect.value,pkg=packageCatalog[code];if(!pkg){packageDetails.textContent=bookingText("bookingPackageHint");return;}const validity=pkg.months?` · ${pkg.months} ${pkg.months===1?"month":"months"}`:"";packageDetails.textContent=`${pkg.sessions} ${pkg.sessions===1?"session":"sessions"}${validity}`;}
+function populateSessionTypes(){const pkg=packageCatalog[packageSelect.value];sessionTypeSelect.innerHTML="";const placeholder=document.createElement("option");placeholder.value="";placeholder.disabled=true;placeholder.selected=true;placeholder.textContent=bookingText("bookingChoose");sessionTypeSelect.appendChild(placeholder);if(!pkg){sessionTypeSelect.disabled=true;return;}Object.keys(pkg.prices).forEach(type=>{const option=document.createElement("option");option.value=type;option.textContent=bookingCardText(type);sessionTypeSelect.appendChild(option);});sessionTypeSelect.disabled=false;}
+function renderSelectedPrice(){const pkg=packageCatalog[packageSelect.value],type=sessionTypeSelect.value;if(!pkg||!type||pkg.prices[type]===undefined){selectedPrice.textContent="";return;}selectedPrice.textContent=`${bookingText("bookingPriceLabel")}: ${formatBookingPrice(pkg.prices[type])}`;}
+function renderBookingSlots(rows){
+  slotsContainer.innerHTML="";
+  const availabilityRows=Array.isArray(rows)?rows:[];
+  const bySlot=new Map(availabilityRows.map(item=>[String(item.slot??"").trim(),item]));
+  bookingSlots.forEach(slot=>{
+    const item=bySlot.get(slot)||{slot,is_available:false,remaining_seats:0};
+    const available=item.is_available===true||item.is_available==="true";
+    const button=document.createElement("button");
+    button.type="button";
+    button.className="booking-choice slot-choice"+(available?"":" unavailable");
+    button.disabled=!available;
+    const time=document.createElement("span");time.className="slot-time-label";time.textContent=slot;button.appendChild(time);
+    if(!available){button.title=bookingText("bookingTaken");}
+    else{button.addEventListener("click",()=>{
+      slotsContainer.querySelectorAll(".slot-choice").forEach(b=>b.classList.remove("selected"));
+      button.classList.add("selected");selectedTimeInput.value=slot;updateBookingSubmit();
+      if(bookingMsg)bookingMsg.hidden=true;
+    });}
+    slotsContainer.appendChild(button);
+  });
+  updateBookingSubmit();
+}
+async function loadBookingSlots(date){
+  // Availability is loaded from a small read-only RPC. If it is temporarily
+  // unavailable, keep the timetable selectable; the database trigger still
+  // prevents two active requests from taking the same date/time.
+  selectedTimeInput.value="";
+  timeSelection.hidden=false;
+  slotsContainer.textContent=bookingText("bookingLoading");
+  try{
+    const {data,error}=await supabaseClient.rpc("get_available_booking_slots_v2",{
+      p_start_date:date,
+      p_session_type:sessionTypeSelect.value
+    });
+    if(error) throw error;
+    if(!Array.isArray(data)) throw new Error("Unexpected availability response");
+    renderBookingSlots(data);
+  }catch(error){
+    console.warn("Availability lookup unavailable; allowing request submission and relying on the database slot guard:",error);
+    renderBookingSlots(bookingSlots.map(slot=>({slot,is_available:true,remaining_seats:1})));
+  }
+  updateBookingSubmit();
+  if(bookingMsg) bookingMsg.hidden=true;
+}
+
+// Custom calendar: only future Saturdays and Sundays are enabled.
+let calendarMonth=new Date();calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth(),1);
+function renderWeekendCalendar(){const grid=document.getElementById("calendarDays"),weekdays=document.getElementById("calendarWeekdays"),label=document.getElementById("calendarMonthLabel");if(!grid||!weekdays||!label)return;const lang=document.documentElement.lang||"fr",dict=bookingCardI18n[lang]||bookingCardI18n.fr;label.textContent=`${dict.months[calendarMonth.getMonth()]} ${calendarMonth.getFullYear()}`;weekdays.innerHTML="";dict.weekdays.forEach(day=>{const el=document.createElement("span");el.textContent=day;weekdays.appendChild(el);});grid.innerHTML="";const first=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth(),1),offset=(first.getDay()+6)%7,days=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()+1,0).getDate();for(let i=0;i<offset;i++){const blank=document.createElement("span");grid.appendChild(blank);}const today=new Date();today.setHours(0,0,0,0);for(let n=1;n<=days;n++){const date=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth(),n),iso=`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(n).padStart(2,"0")}`,weekend=date.getDay()===0||date.getDay()===6,btn=document.createElement("button");btn.type="button";btn.className="calendar-day"+(weekend?" weekend":"")+(iso===startDateInput.value?" selected":"")+(date.toDateString()===today.toDateString()?" today":"");btn.textContent=String(n);btn.disabled=!weekend||date<today||!sessionTypeSelect.value;btn.setAttribute("aria-pressed",String(iso===startDateInput.value));btn.addEventListener("click",()=>{if(btn.disabled)return;startDateInput.value=iso;selectedDayInput.value=iso;renderWeekendCalendar();resetBookingAvailability();loadBookingSlots(iso);updateBookingSubmit();if(bookingMsg)bookingMsg.hidden=true;});grid.appendChild(btn);}}
+document.getElementById("calendarPrev")?.addEventListener("click",()=>{calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()-1,1);renderWeekendCalendar();});document.getElementById("calendarNext")?.addEventListener("click",()=>{calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()+1,1);renderWeekendCalendar();});
+packageSelect.addEventListener("change",()=>{updatePackageDetails();populateSessionTypes();sessionSelection.hidden=false;dateSelection.hidden=true;startDateInput.disabled=true;startDateInput.value="";groupFormationWrap.hidden=true;groupFormation.checked=false;groupFormation.required=false;selectedPrice.textContent="";resetBookingAvailability();renderBookingChoiceCards();renderWeekendCalendar();if(bookingMsg)bookingMsg.hidden=true;});
+sessionTypeSelect.addEventListener("change",()=>{const type=sessionTypeSelect.value,isGroup4=type==="group4";groupFormationWrap.hidden=!isGroup4;groupFormation.required=isGroup4;if(!isGroup4)groupFormation.checked=false;renderSelectedPrice();dateSelection.hidden=!type;startDateInput.disabled=!type;resetBookingAvailability();if(type&&startDateInput.value&&isWeekendDate(startDateInput.value))loadBookingSlots(startDateInput.value);updateBookingSubmit();renderBookingChoiceCards();renderWeekendCalendar();if(bookingMsg)bookingMsg.hidden=true;});
+groupFormation.addEventListener("change",updateBookingSubmit);
+startDateInput.addEventListener("change",()=>{if(startDateInput.value&&!isWeekendDate(startDateInput.value)){startDateInput.value="";setBookingMessage(bookingCardText("weekendOnly"),true);return;}resetBookingAvailability();if(startDateInput.value&&sessionTypeSelect.value){selectedDayInput.value=startDateInput.value;loadBookingSlots(startDateInput.value);}renderWeekendCalendar();updateBookingSubmit();if(bookingMsg)bookingMsg.hidden=true;});
+setMinimumStartDate();renderWeekendCalendar();renderBookingChoiceCards();
+bookingForm.addEventListener("submit",async event=>{
+  event.preventDefault();
+  if(bookingInFlight)return;
+  const fullName=document.getElementById("fullName").value.trim();
+  const phoneNumber=document.getElementById("phoneNumber").value.trim();
+  const packageCode=packageSelect.value;
+  const pkg=packageCatalog[packageCode];
+  const sessionType=sessionTypeSelect.value;
+  const startDate=startDateInput.value;
+  const bookingTime=selectedTimeInput.value;
+  if(sessionType==="group4"&&!groupFormation.checked){
+    setBookingMessage(bookingCardText("groupRequired"),true);
+    groupFormation.focus();
+    return;
+  }
+  if(!bookingForm.reportValidity())return;
+  if(!supabaseClient){setBookingMessage(bookingText("supabaseInitError"),true);return;}
+  if(!pkg||!sessionType||!startDate||!isWeekendDate(startDate)||!bookingTime){
+    setBookingMessage(bookingText("bookingSelectSlot"),true);return;
+  }
+  const price=Number(pkg.prices[sessionType]);
+  bookingInFlight=true;
+  bookingSubmit.disabled=true;
+  bookingSubmit.textContent=bookingText("bookingSending");
+  if(bookingMsg)bookingMsg.hidden=true;
+  try{
+    const bookingRecord={
+      full_name:fullName,
+      phone:phoneNumber,
+      package_code:packageCode,
+      session_type:sessionType,
+      price_eur:price,
+      start_date:startDate,
+      booking_time:bookingTime,
+      group_confirmed:sessionType==="group4"?groupFormation.checked:false,
+      status:"pending"
+    };
+    const {error}=await supabaseClient.from("bookings").insert(bookingRecord);
+    if(error) throw error;
+    setBookingMessage(bookingText("bookingSuccess"));
+    bookingForm.reset();
+    packageSelect.value="";
+    sessionTypeSelect.value="";
+    sessionTypeSelect.disabled=true;
+    startDateInput.value="";
+    startDateInput.disabled=true;
+    groupFormation.checked=false;
+    groupFormation.required=false;
+    groupFormationWrap.hidden=true;
+    sessionSelection.hidden=true;
+    dateSelection.hidden=true;
+    timeSelection.hidden=true;
+    packageDetails.textContent=bookingText("bookingPackageHint");
+    selectedPrice.textContent="";
+    resetBookingAvailability();
+    renderWeekendCalendar();
+    renderBookingChoiceCards();
+  }catch(error){
+    console.error("Booking insert error:",error);
+    const detail=error?.message||error?.details||"";
+    if(String(detail).toLowerCase().includes("slot_taken")){
+      setBookingMessage(bookingText("bookingSlotTaken"),true);
+      await loadBookingSlots(startDate);
+    }else{
+      const lang=document.documentElement.lang||"fr";
+      const prefix=lang==="ar"?"تعذر إرسال طلب الحجز: ":lang==="en"?"Could not submit the booking request: ":"Impossible d’envoyer la demande : ";
+      setBookingMessage(prefix+detail,true);
+    }
+  }finally{
+    bookingInFlight=false;
+    bookingSubmit.textContent=bookingText("bookingSubmit");
+    updateBookingSubmit();
+  }
+});;
 fetch(`${SUPABASE_URL}/rest/v1/reviews?status=eq.approved&select=*`, {
   headers:{"apikey":SUPABASE_KEY,"Authorization":`Bearer ${SUPABASE_KEY}`}
 }).then(res=>res.ok ? res.json() : Promise.reject(new Error("Could not load reviews")))
